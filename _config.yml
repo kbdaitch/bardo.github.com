@@ -80,4 +80,9 @@ deploy:
   type: git
   repo: git@github.com:kbdaitch/kbdaitch.github.io.git
 
+server:
+  port: 4000
+  log: true
+  ip: 0.0.0.0
+
 disqus_shortname: bardo-io
