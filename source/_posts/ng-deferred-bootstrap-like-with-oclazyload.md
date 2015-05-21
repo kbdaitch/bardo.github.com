@@ -8,7 +8,7 @@ subject: JavaScript
 layout: post
 ---
 
-A few days ago, it dawned on me that the full futureStates implemention as shown in my previous blog [post](http://bardo.io/blog/2014/08/26/oclazyload-future-states/) was not needed by my app. I was okay with eagerly loading the JavaScript, however I wanted to acheive two things, namely,
+A few days ago, it dawned on me that the full futureStates implemention as shown in my previous blog [post](http://bardo.io/2014/08/26/oclazyload-future-states/) was not needed by my app. I was okay with eagerly loading the JavaScript, however I wanted to acheive two things, namely,
 
 1. Restrict what JavaScript I wanted to load in the entire lifecyle of an app. To me, it was pretty deterministic what I wanted to load or not depending on a remote JSON resource.
 2. I wanted some abilitites of the package [angular-deferred-bootstrap](https://github.com/philippd/angular-deferred-bootstrap) but in a way that I didn't have replication of services and DI-injected resources that they fetched. I wanted these because `ui-router` would otherwise force me to
