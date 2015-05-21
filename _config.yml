@@ -80,5 +80,4 @@ deploy:
   type: git
   repo: git@github.com:kbdaitch/kbdaitch.github.io.git
 
-plugins:
-- hexo-generator-cname
+disqus_shortname: bardo-io
