@@ -78,7 +78,7 @@ marked:
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:kbdaitch/kbdaitch.github.io.git
+  repo: git@github.com:charandas/charandas.github.io.git
 
 server:
   port: 4000
