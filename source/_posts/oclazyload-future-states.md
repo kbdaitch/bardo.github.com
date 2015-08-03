@@ -19,7 +19,7 @@ So to reiterate, the `futureStates` implementation is all about describing the s
 
 I have a GitHub repo showing a test app demonstrating this [here](https://github.com/kbdaitch/ui-router-lazy-example).
 
-The App runs [here](http://bardo.io/ui-router-lazy-example/app). The pertinent code is in [app.js](https://github.com/kbdaitch/ui-router-lazy-example/blob/master/app/js/app.js), shown in gist here:
+The App runs [here](http://infinitecaus.es/ui-router-lazy-example/app). The pertinent code is in [app.js](https://github.com/kbdaitch/ui-router-lazy-example/blob/master/app/js/app.js), shown in gist here:
 {%gist kbdaitch/831560ade572ad9739cd %}
 
 ### What I learned through this ###

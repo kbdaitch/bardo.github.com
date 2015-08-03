@@ -3,16 +3,16 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Karan Batra-Daitch
+title: Charandas Batra-Daitch
 subtitle: Web Developer-Evangelist
 description: Passionate about all things data, scale, and web
-author: Karan Batra-Daitch
+author: Charandas Batra-Daitch
 language:
 timezone: America/New_York
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://bardo.io
+url: http://infinitecaus.es
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:

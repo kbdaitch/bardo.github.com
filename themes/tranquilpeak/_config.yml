@@ -38,15 +38,15 @@ sidebar:
     author_links:
         github:
             title: GitHub
-            url: https://github.com/kbdaitch
+            url: https://github.com/charandas
             icon: github
         stack_overflow:
             title: Stack Overflow
-            url: http://careers.stackoverflow.com/kbdaitch
+            url: http://careers.stackoverflow.com/charandas
             icon: stack-overflow
         twitter:
             title: Twitter
-            url: https://twitter.com/kbdaitch
+            url: https://twitter.com/charandas108
             icon: twitter
         # facebook:
         #     title: Facebook
@@ -58,7 +58,7 @@ sidebar:
         #     icon: google-plus
         linked_in:
             title: Linked In
-            url: https://www.linkedin.com/in/kbdaitch
+            url: https://www.linkedin.com/in/charandas
             icon: linkedin
         # mail:
         #     title: Mail
@@ -72,8 +72,8 @@ sidebar:
 
 # Author
 author:
-    email: karanganesha04@gmail.com
-    bio: I am Karan, a developer, generalist and hacker originally from India, now based in the US. I am passionate about building mobile and web apps that challenge the problems of data and scale. I blog about technology here and my projects on github might be of your interest.
+    email: charandas108@gmail.com
+    bio: I am Charandas, a developer, generalist and hacker originally from India, now based in the US. I am passionate about building mobile and web apps that challenge the problems of data and scale. I blog about technology here and my projects on github might be of your interest.
     job:
     location:
     picture:    # Your profile picture located in folder `source/_images/` (development)
