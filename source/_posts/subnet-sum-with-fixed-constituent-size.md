@@ -23,7 +23,7 @@ intriguing challenge:
 While not the most optimal solution, my solution based
 off of this Quora [answer](http://www.quora.com/I-need-to-write-an-algorithm-How-should-I-approach-the-following-problem/answer/Ivan-Krpelnik) works:
 
-{%gist kbdaitch/5fb5189ce1239c807afd %}
+{%gist charandas/5fb5189ce1239c807afd %}
 
 Another possible solution could be to not brute force the iteration between the start and stop positions, and instead compute all the permutations of the bitmasks that have `z` `1's`. That one could take some more work, using this [jsbin](http://jsbin.com/eXefawe/2/edit?html,js,output).
 

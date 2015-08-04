@@ -23,7 +23,7 @@ I will try to cover what worked for me.
 My code throughout would be `requirejs`, feel free to cater to your own module loader, or the lack thereof. We will have three modules, one for root controller `app` state, and two more for `a` and
 `b` module states. We would mostly leave out `b` for posterity.
 
-{%gist kbdaitch/16f2a5552c2b419002ae %}
+{%gist charandas/16f2a5552c2b419002ae %}
 
 For testing the `app` state, lets target the following:
 
@@ -33,7 +33,7 @@ For testing the `app` state, lets target the following:
 
 Which kinda boils down to:
 
-{%gist kbdaitch/eb96cd89f49a8739b644 %}
+{%gist charandas/eb96cd89f49a8739b644 %}
 
 #### Reality check #####
 1. We checked that `SettingsService` is being invoked as we intend.
@@ -44,13 +44,13 @@ Which kinda boils down to:
 
 For testing `A` module, lets mock out a parent `app` state so we can isolate our testing to A.
 
-{%gist kbdaitch/72db4ec5521f0f3a7cea %}
+{%gist charandas/72db4ec5521f0f3a7cea %}
 
-{%gist kbdaitch/ec43d043654d0f014370 %}
+{%gist charandas/ec43d043654d0f014370 %}
 
 and its tests:
 
-{%gist kbdaitch/b971857be3cb3446f798 %}
+{%gist charandas/b971857be3cb3446f798 %}
 
 ### Summarizing ###
 I covered a good set of assertions for your states. What are you doing in addition to this, or different from this? Hit me up with your interesting thoughts.

@@ -12,10 +12,10 @@ layout: post
 angular app. The API is pretty flexible as provided [here](http://madmimi.github.io/angular-foundation/#/modal).
 
 As mentioned in the example in the JavaScript, you can accomplish a range of modals pretty easily. However, for simpler modals, this can get really tedious if all your ModalInstanceCtrl is going to do is bringing the modal up and dismissing/closing it. Instead, here is my take on the modal instance controller.
-{% gist kbdaitch/140341acbc49a8a3f97b %}
+{% gist charandas/140341acbc49a8a3f97b %}
 
 Also, a wrapper around `$modal`, namely `ModalService` could be written to automatically plug this controller in with some template defaults. Like so,
-{%gist kbdaitch/ed6bf36215888c4a8cba %}
+{%gist charandas/ed6bf36215888c4a8cba %}
 
 ### What did we accomplish ###
 
@@ -26,11 +26,11 @@ L65 ensures that the modal made has a scheduled timeout that can dismiss it. Not
 4. `template`: the service also sets up the default template that you can override through the params of the open function.
 
 ### In action ###
-{%gist kbdaitch/689e2c30ddddec25103d %}
+{%gist charandas/689e2c30ddddec25103d %}
 
 ### With extra parmas ###
 Some pseudo code: 
-{%gist kbdaitch/6825b1f2d81dadd9fc89 %}
+{%gist charandas/6825b1f2d81dadd9fc89 %}
 
 
 ### <a name="improving"></a> Dare you to improve it ###

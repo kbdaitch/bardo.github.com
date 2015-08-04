@@ -15,7 +15,7 @@ A few days ago, it dawned on me that the full futureStates implemention as shown
 callout certain resolve-names needlessly. So for instance, if I have a `ListingService` that on app start, loads 
 a `listings.json` using a function `ListingService.getAll` and subsequently, I could make other calls to `LIstingService`
 such as `query` or `get`. So I did the `getAll` in the root state, and then proceeded to use the `ListingService` like so:
-{%gist kbdaitch/c00c63a47a8f921773d0 %}
+{%gist charandas/c00c63a47a8f921773d0 %}
  If you notice, I would now be forced to couple the `allListings` resource with my use of `ListingService` to be able to guarantee that all listings have been fetched. The reasoning here lies in the fact that `ui-router` performs resolver
  resolutions asynchronously. There is no concept of first doing it for the root states, and then the child states.
 
@@ -26,7 +26,7 @@ Also, the `ListingService` would now need to be a provider since its being used 
 booting process. With it being a provider, you cannot have `$ngResource` in its code, however `$http` can serve you as well
 hopefully.
 
-{%gist kbdaitch/35b51979d7e1291ef34b %}
+{%gist charandas/35b51979d7e1291ef34b %}
 
 ### Why name our example module raiiServicesExample ###
 RAII stands for Resouce Allocation is Initialization. Thanks to my first boss for mentoring in those early years, these acronyms mean a ton and come handy. This is another description for what we have now in `ListingService` when the app has finished loading.

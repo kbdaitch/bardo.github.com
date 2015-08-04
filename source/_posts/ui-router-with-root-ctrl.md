@@ -31,7 +31,7 @@ ends up becoming a decisive place to check controller mappings.
 The only thing to keep in mind is to use a `template`/`templateUrl` for abstract states that contains a `<ui-view />`. This way, you ensure there is an unbroken line of nested `<ui-view>` hierarchy.
 
 My `routes.js` looks similar to:
-{% gist kbdaitch/660802f445a9edb06fe3 %}
+{% gist charandas/660802f445a9edb06fe3 %}
 
 Then, one could also follow the same pattern for the root controller of the print module of the app; have the abstract state and instantiate the root print controller on that. 
 

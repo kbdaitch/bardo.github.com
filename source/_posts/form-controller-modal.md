@@ -24,7 +24,7 @@ Assuming you are working with their templates dist JS, namely `mm-foundation-tpl
 3. Expose it on the outside scope by specifying in `attrs`
 
 Here is the gist:
-{%gist kbdaitch/02d177e71c8de35e4db1 %}
+{%gist charandas/02d177e71c8de35e4db1 %}
 
 ### How to Use ###
 

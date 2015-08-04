@@ -24,9 +24,9 @@ hurt at all.
 or dismiss. You will notice that the `ModalInstanceCtrl` has the extra `unregister` calls. This is the answer to my question of intercepting dismissing/closing from the UI. Once a modal is unregistered the boolean that we introduced protects from using the inner instance again.
 3. `cleanup` API: Also, we introduced a way for your application to close a bunch of modals to be closed automatically in any given scenario.
 
-{% gist  kbdaitch/285194555dc7f1c028d7 %}
+{% gist  charandas/285194555dc7f1c028d7 %}
 
-{% gist kbdaitch/5d51337339fb3006c205 %}
+{% gist charandas/5d51337339fb3006c205 %}
 
 Also, please note that I define two different gists here for readability. You can have them in the same file, so as to use the private `unregister` function in `ModalInstanceCtrl`.
 

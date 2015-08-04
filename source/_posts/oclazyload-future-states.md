@@ -17,10 +17,10 @@ allows you to use any lazy loading Angular mechanism for loading a missing state
 
 So to reiterate, the `futureStates` implementation is all about describing the state that is to be lazily loaded. The way to lazy load is left to you to define. We will use [ocLazyLoad](https://github.com/ocombe/ocLazyLoad) for our purposes.
 
-I have a GitHub repo showing a test app demonstrating this [here](https://github.com/kbdaitch/ui-router-lazy-example).
+I have a GitHub repo showing a test app demonstrating this [here](https://github.com/charandas/ui-router-lazy-example).
 
-The App runs [here](http://infinitecaus.es/ui-router-lazy-example/app). The pertinent code is in [app.js](https://github.com/kbdaitch/ui-router-lazy-example/blob/master/app/js/app.js), shown in gist here:
-{%gist kbdaitch/831560ade572ad9739cd %}
+The App runs [here](http://infinitecaus.es/ui-router-lazy-example/app). The pertinent code is in [app.js](https://github.com/charandas/ui-router-lazy-example/blob/master/app/js/app.js), shown in gist here:
+{%gist charandas/831560ade572ad9739cd %}
 
 ### What I learned through this ###
 1. `requirejs` modules that span multiple files can be used for lazy loading a ui-router state. However, as of yet, such
