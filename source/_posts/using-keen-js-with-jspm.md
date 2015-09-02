@@ -8,8 +8,7 @@ subject: module loaders
 layout: post
 ---
 
-[keen-js](https://github.com/keen/keen-js/blob/master/package.json) specifies
-`superagent: '^0.21.0` as of version `3.2.7`.
+[keen-js](https://github.com/keen/keen-js/blob/master/package.json) specifies `superagent: '^0.21.0` as of version `3.2.7`.
 
 If you are using JSPM to include keen-js, and getting the CORS error on client API calls like so:
 {%gist charandas/f148c9cca1ec9412e8b7 %}
