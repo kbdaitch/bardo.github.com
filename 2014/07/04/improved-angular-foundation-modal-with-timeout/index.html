@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Charandas Batra-Daitch">
+    <title>Charandas Batra-Daitch - Improved boilerplate when using Madmimi&#39;s angular-foundation $modal</title>
+    <meta name="author" content="Charandas Batra-Daitch">
+    <meta name="description" content="Charandas Batra-Daitch">
+    <link rel="icon" href="/assets/images/null">
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style.min.css" type="text/css">
+    <!--STYLES END-->
+    
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-48614513-1']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+</head>
+
+    <body>
+        <div id="blog">
+            <header id="header">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars "></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="http://infinitecaus.es">Charandas Batra-Daitch</a>
+    </h1>
+    
+        <a class="header-picture-link" href="/#about">
+            <img class="header-picture" src="http://www.gravatar.com/avatar/511d6c5e91afae05e2f1468adca2fdd5?s=90"/>
+        </a>
+    
+</header>
+            <nav id="sidebar">
+    
+        <div class="sidebar-profile">
+            <a href="/#about">
+                
+                    <img class="sidebar-profile-picture" src="http://www.gravatar.com/avatar/511d6c5e91afae05e2f1468adca2fdd5?s=90"/>
+                
+            </a>
+            <span class="sidebar-profile-name hide-md">Charandas Batra-Daitch</span>
+        </div>
+    
+    
+        <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link" href="http://infinitecaus.es/">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                        <span class="sidebar-button-desc hide-md">Home</span>
+                    </a>
+                </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link" href="http://infinitecaus.es/all-tags">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                        <span class="sidebar-button-desc hide-md">Tags</span>
+                    </a>
+                </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link" href="http://infinitecaus.es/#about">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                        <span class="sidebar-button-desc hide-md">About me</span>
+                    </a>
+                </li>
+            
+        </ul>
+    
+        <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link" href="https://github.com/charandas" target="_blank">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+                        <span class="sidebar-button-desc hide-md">GitHub</span>
+                    </a>
+                </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link" href="http://careers.stackoverflow.com/charandas" target="_blank">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-stack-overflow"></i>
+                        <span class="sidebar-button-desc hide-md">Stack Overflow</span>
+                    </a>
+                </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link" href="https://twitter.com/charandas108" target="_blank">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-twitter"></i>
+                        <span class="sidebar-button-desc hide-md">Twitter</span>
+                    </a>
+                </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link" href="https://www.linkedin.com/in/charandas" target="_blank">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
+                        <span class="sidebar-button-desc hide-md">Linked In</span>
+                    </a>
+                </li>
+            
+        </ul>
+    
+</nav>
+            <div id="main">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+        <div class="post-header main-content-wrap">
+    
+        <h1 class="post-title" itemprop="headline">Improved boilerplate when using Madmimi&#39;s angular-foundation $modal</h1>
+    
+    <div class="post-meta">
+    <time  itemprop="datePublished" content="Fri Jul 04 2014 03:15:00 GMT-0400">
+        Jul 04, 2014
+    </time>
+    
+</div>
+</div>
+    
+    <div class="post-content markdown main-content-wrap" itemprop="articleBody">
+        <p><strong>EDIT: Aug 20th 2014: found a minor bug with the way manual dismisses/closes were setting <code>.closed</code> to <code>true</code><br>but were missing the case where user triggered close/dismiss using <code>ModalInstanceCtrl</code> <code>$scope.ok</code> or <code>$scope.cancel</code>. The gist has been updated to set that for all cases in the <code>unregister</code><br>function. Also, the unregister function would now need to be called in the wrapper’s dismiss and closed for pool maintainence.</strong></p>
+<p>In my earlier <a href="/2014/06/07/angular-foundation-modal-with-timeout/" title="post">post</a>, I presented the problem of not being able to intercept<br>the closing/dismissing of a modal from the UI. While searching for an answer to that problem I ended up improving and simplifying the ModalService wrapper.</p>
+<h3 id="Salient_Features_of_this_Update">Salient Features of this Update</h3><ol>
+<li><code>closed</code> boolean: the wrapper around <code>$modal</code>, namely <code>ModalService</code>, now relies on a boolean for gating the inner instances close and dismiss methods. This goes a long way in simplifying our timeout code. We no longer cancel the timeout in the event of a manual close or instead. The noop like behavior of close and dismiss wrappers doesn’t<br>hurt at all.</li>
+<li><code>unregister</code> and pooling: <code>unregister</code> is a private method that keeps the modal <code>pool</code> (a newly introduced private data structure for book-keeping) maintained in event of user-enforced close<br>or dismiss. You will notice that the <code>ModalInstanceCtrl</code> has the extra <code>unregister</code> calls. This is the answer to my question of intercepting dismissing/closing from the UI. Once a modal is unregistered the boolean that we introduced protects from using the inner instance again.</li>
+<li><code>cleanup</code> API: Also, we introduced a way for your application to close a bunch of modals to be closed automatically in any given scenario.</li>
+</ol>
+<script src="//gist.github.com/charandas/285194555dc7f1c028d7.js"></script>
+<script src="//gist.github.com/charandas/5d51337339fb3006c205.js"></script>
+<p>Also, please note that I define two different gists here for readability. You can have them in the same file, so as to use the private <code>unregister</code> function in <code>ModalInstanceCtrl</code>.</p>
+<h3 id="In_Closing">In Closing</h3><p>It was a process getting to know <code>angular-foundation</code> <code>$modal</code> service. For instance, the very fact that $modalInstance injected into the <code>ModalInstanceCtrl</code><br>was the very instance that <code>$modal.open</code> returns took some time to sink in. What are you doing with <code>angular-foundation</code>: get in touch as we could likely benefit from each-other’s<br>know-how.</p>
+
+        
+            
+        
+    </div>
+    <div class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/angular/">angular</a> <a class="tag tag--primary tag--small t-link" href="/tags/angular-foundation/">angular-foundation</a> <a class="tag tag--primary tag--small t-link" href="/tags/boilerplate/">boilerplate</a> <a class="tag tag--primary tag--small t-link" href="/tags/foundation/">foundation</a> <a class="tag tag--primary tag--small t-link" href="/tags/modal/">modal</a> <a class="tag tag--primary tag--small t-link" href="/tags/timeout/">timeout</a>
+
+            </div>
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2014/08/26/oclazyload-future-states/"  data-tooltip="Lazy Loading ui-router states with ocLazyLoad and ui-router-extras futureStates">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2014/06/21/form-controller-modal/" data-tooltip="Patch angular-foundation to expose a form controller">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://infinitecaus.es/2014/07/04/improved-angular-foundation-modal-with-timeout/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://infinitecaus.es/2014/07/04/improved-angular-foundation-modal-with-timeout/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://infinitecaus.es/2014/07/04/improved-angular-foundation-modal-with-timeout/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                <i class="fa fa-comment-o"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+            <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+        
+    </div>
+    <div class="post-bottom-bar">
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2014/08/26/oclazyload-future-states/"  data-tooltip="Lazy Loading ui-router states with ocLazyLoad and ui-router-extras futureStates">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2014/06/21/form-controller-modal/" data-tooltip="Patch angular-foundation to expose a form controller">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://infinitecaus.es/2014/07/04/improved-angular-foundation-modal-with-timeout/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://infinitecaus.es/2014/07/04/improved-angular-foundation-modal-with-timeout/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://infinitecaus.es/2014/07/04/improved-angular-foundation-modal-with-timeout/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                <i class="fa fa-comment-o"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2015 Charandas Batra-Daitch. Creative Commons Attribution-ShareAlike.
+    </span>
+</footer>
+
+            </div>
+        </div>
+        <div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="http://www.gravatar.com/avatar/511d6c5e91afae05e2f1468adca2fdd5?s=110"/>
+        
+            <h4 id="about-card-name">Charandas Batra-Daitch</h4>
+        
+            <h5 id="about-card-bio">I am Charandas, a developer, generalist and hacker originally from India, now based in the US. I am passionate about building mobile and web apps that challenge the problems of data and scale. I blog about technology here and my projects on github might be of your interest.</h5>
+        
+        
+        
+    </div>
+</div>
+        <div id="cover" style="background-image:url('/assets/images/cover.png');"></div>
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/script.min.js" type="text/javascript"></script>
+<!--SCRIPTS END-->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'bardo-io';
+        (function() {
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+</html>

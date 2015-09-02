@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Charandas Batra-Daitch">
+    <title>Charandas Batra-Daitch - Using a root controller with ui-router</title>
+    <meta name="author" content="Charandas Batra-Daitch">
+    <meta name="description" content="Charandas Batra-Daitch">
+    <link rel="icon" href="/assets/images/null">
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style.min.css" type="text/css">
+    <!--STYLES END-->
+    
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-48614513-1']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+</head>
+
+    <body>
+        <div id="blog">
+            <header id="header">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars "></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="http://infinitecaus.es">Charandas Batra-Daitch</a>
+    </h1>
+    
+        <a class="header-picture-link" href="/#about">
+            <img class="header-picture" src="http://www.gravatar.com/avatar/511d6c5e91afae05e2f1468adca2fdd5?s=90"/>
+        </a>
+    
+</header>
+            <nav id="sidebar">
+    
+        <div class="sidebar-profile">
+            <a href="/#about">
+                
+                    <img class="sidebar-profile-picture" src="http://www.gravatar.com/avatar/511d6c5e91afae05e2f1468adca2fdd5?s=90"/>
+                
+            </a>
+            <span class="sidebar-profile-name hide-md">Charandas Batra-Daitch</span>
+        </div>
+    
+    
+        <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link" href="http://infinitecaus.es/">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                        <span class="sidebar-button-desc hide-md">Home</span>
+                    </a>
+                </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link" href="http://infinitecaus.es/all-tags">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                        <span class="sidebar-button-desc hide-md">Tags</span>
+                    </a>
+                </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link" href="http://infinitecaus.es/#about">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                        <span class="sidebar-button-desc hide-md">About me</span>
+                    </a>
+                </li>
+            
+        </ul>
+    
+        <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link" href="https://github.com/charandas" target="_blank">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+                        <span class="sidebar-button-desc hide-md">GitHub</span>
+                    </a>
+                </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link" href="http://careers.stackoverflow.com/charandas" target="_blank">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-stack-overflow"></i>
+                        <span class="sidebar-button-desc hide-md">Stack Overflow</span>
+                    </a>
+                </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link" href="https://twitter.com/charandas108" target="_blank">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-twitter"></i>
+                        <span class="sidebar-button-desc hide-md">Twitter</span>
+                    </a>
+                </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link" href="https://www.linkedin.com/in/charandas" target="_blank">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
+                        <span class="sidebar-button-desc hide-md">Linked In</span>
+                    </a>
+                </li>
+            
+        </ul>
+    
+</nav>
+            <div id="main">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+        <div class="post-header main-content-wrap">
+    
+        <h1 class="post-title" itemprop="headline">Using a root controller with ui-router</h1>
+    
+    <div class="post-meta">
+    <time  itemprop="datePublished" content="Sun May 11 2014 13:06:00 GMT-0400">
+        May 11, 2014
+    </time>
+    
+</div>
+</div>
+    
+    <div class="post-content markdown main-content-wrap" itemprop="articleBody">
+        <p>ui-router is a great tool for those of us in the Angular realm. It gives a more logical way to represent the state of an application<br>than just plain ol’ URLs. This post is not going to be a hands-on tutorial post, but the intent is throw around some ideas about<br>structuring the root controller of your angular app.</p>
+<h3 id="Root_Controller_and_Saving_the_Root_URL">Root Controller and Saving the Root URL</h3><p>Root controller allows one to instantiate some global data and services, and maybe even setup a <code>$global</code> service to act as a shim.</p>
+<p>Root controller can often be seen in the base <code>index.html</code> of a project. In this case, it is used by calling the <code>ng-controller</code> directive on a <code>&lt;head&gt;</code> or <code>&lt;body&gt;</code> tag.<br>Alternatively, it could be mapped to a URL (the base URL for instance: “/“), and loaded via an <code>ng-view</code> in <code>index.html</code>; I am personally not a fan of using up the root URL for this purpose.</p>
+<p>With ui-router’s <code>abstract</code> state feature, one could save the URL as well as save hardcoding a controller definition in HTML. I think this is fruitful, as the <code>routes.js</code> (or whatever you call it)<br>ends up becoming a decisive place to check controller mappings. </p>
+<blockquote>
+<p>Basically, the <code>abstract</code> state buys us the ability for that url or state to be unreachable.<br>This means that one can only<br>instantiate that state while visiting one of its children states - Magikal!</p>
+<p>– <cite>Every seasoned ui-router user</cite></p>
+</blockquote>
+<p>The only thing to keep in mind is to use a <code>template</code>/<code>templateUrl</code> for abstract states that contains a <code>&lt;ui-view /&gt;</code>. This way, you ensure there is an unbroken line of nested <code>&lt;ui-view&gt;</code> hierarchy.</p>
+<p>My <code>routes.js</code> looks similar to:<br><script src="//gist.github.com/charandas/660802f445a9edb06fe3.js"></script></p>
+<p>Then, one could also follow the same pattern for the root controller of the print module of the app; have the abstract state and instantiate the root print controller on that. </p>
+<blockquote>
+<p>Also, as noted in the comments, there is nothing stopping us from loading a subset of states in a base template, say<br><code>index.html</code>, and the leftovers in another called <code>print.html</code>. In fact, the only thing<br>ui-router is concerned with is that each of these templates have a <code>&lt;ui-view /&gt;</code>. This way, you get different base<br>layouts and styling for different modules of your application.</p>
+<p>– <cite>Every seasoned ui-router user</cite></p>
+</blockquote>
+
+        
+            
+        
+    </div>
+    <div class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/angular/">angular</a> <a class="tag tag--primary tag--small t-link" href="/tags/ng-controller/">ng-controller</a> <a class="tag tag--primary tag--small t-link" href="/tags/root-controller/">root controller</a> <a class="tag tag--primary tag--small t-link" href="/tags/ui-router/">ui-router</a>
+
+            </div>
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2014/06/07/angular-foundation-modal-with-timeout/"  data-tooltip="Reducing boilerplate when using Madmimi&#39;s angular-foundation $modal">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2014/03/03/semver-2/" data-tooltip="Semantic Versioning">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://infinitecaus.es/2014/05/11/ui-router-with-root-ctrl/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://infinitecaus.es/2014/05/11/ui-router-with-root-ctrl/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://infinitecaus.es/2014/05/11/ui-router-with-root-ctrl/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                <i class="fa fa-comment-o"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+            <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+        
+    </div>
+    <div class="post-bottom-bar">
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2014/06/07/angular-foundation-modal-with-timeout/"  data-tooltip="Reducing boilerplate when using Madmimi&#39;s angular-foundation $modal">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2014/03/03/semver-2/" data-tooltip="Semantic Versioning">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://infinitecaus.es/2014/05/11/ui-router-with-root-ctrl/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://infinitecaus.es/2014/05/11/ui-router-with-root-ctrl/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://infinitecaus.es/2014/05/11/ui-router-with-root-ctrl/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                <i class="fa fa-comment-o"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2015 Charandas Batra-Daitch. Creative Commons Attribution-ShareAlike.
+    </span>
+</footer>
+
+            </div>
+        </div>
+        <div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="http://www.gravatar.com/avatar/511d6c5e91afae05e2f1468adca2fdd5?s=110"/>
+        
+            <h4 id="about-card-name">Charandas Batra-Daitch</h4>
+        
+            <h5 id="about-card-bio">I am Charandas, a developer, generalist and hacker originally from India, now based in the US. I am passionate about building mobile and web apps that challenge the problems of data and scale. I blog about technology here and my projects on github might be of your interest.</h5>
+        
+        
+        
+    </div>
+</div>
+        <div id="cover" style="background-image:url('/assets/images/cover.png');"></div>
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/script.min.js" type="text/javascript"></script>
+<!--SCRIPTS END-->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'bardo-io';
+        (function() {
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+</html>

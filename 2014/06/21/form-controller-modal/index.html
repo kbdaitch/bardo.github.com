@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Charandas Batra-Daitch">
+    <title>Charandas Batra-Daitch - Patch angular-foundation to expose a form controller</title>
+    <meta name="author" content="Charandas Batra-Daitch">
+    <meta name="description" content="Charandas Batra-Daitch">
+    <link rel="icon" href="/assets/images/null">
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style.min.css" type="text/css">
+    <!--STYLES END-->
+    
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-48614513-1']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+</head>
+
+    <body>
+        <div id="blog">
+            <header id="header">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars "></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="http://infinitecaus.es">Charandas Batra-Daitch</a>
+    </h1>
+    
+        <a class="header-picture-link" href="/#about">
+            <img class="header-picture" src="http://www.gravatar.com/avatar/511d6c5e91afae05e2f1468adca2fdd5?s=90"/>
+        </a>
+    
+</header>
+            <nav id="sidebar">
+    
+        <div class="sidebar-profile">
+            <a href="/#about">
+                
+                    <img class="sidebar-profile-picture" src="http://www.gravatar.com/avatar/511d6c5e91afae05e2f1468adca2fdd5?s=90"/>
+                
+            </a>
+            <span class="sidebar-profile-name hide-md">Charandas Batra-Daitch</span>
+        </div>
+    
+    
+        <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link" href="http://infinitecaus.es/">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                        <span class="sidebar-button-desc hide-md">Home</span>
+                    </a>
+                </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link" href="http://infinitecaus.es/all-tags">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                        <span class="sidebar-button-desc hide-md">Tags</span>
+                    </a>
+                </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link" href="http://infinitecaus.es/#about">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                        <span class="sidebar-button-desc hide-md">About me</span>
+                    </a>
+                </li>
+            
+        </ul>
+    
+        <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link" href="https://github.com/charandas" target="_blank">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+                        <span class="sidebar-button-desc hide-md">GitHub</span>
+                    </a>
+                </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link" href="http://careers.stackoverflow.com/charandas" target="_blank">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-stack-overflow"></i>
+                        <span class="sidebar-button-desc hide-md">Stack Overflow</span>
+                    </a>
+                </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link" href="https://twitter.com/charandas108" target="_blank">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-twitter"></i>
+                        <span class="sidebar-button-desc hide-md">Twitter</span>
+                    </a>
+                </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link" href="https://www.linkedin.com/in/charandas" target="_blank">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
+                        <span class="sidebar-button-desc hide-md">Linked In</span>
+                    </a>
+                </li>
+            
+        </ul>
+    
+</nav>
+            <div id="main">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+        <div class="post-header main-content-wrap">
+    
+        <h1 class="post-title" itemprop="headline">Patch angular-foundation to expose a form controller</h1>
+    
+    <div class="post-meta">
+    <time  itemprop="datePublished" content="Sat Jun 21 2014 18:51:00 GMT-0400">
+        Jun 21, 2014
+    </time>
+    
+</div>
+</div>
+    
+    <div class="post-content markdown main-content-wrap" itemprop="articleBody">
+        <p><a href="http://madmimi.github.io/angular-foundation/" target="_blank" rel="external">Angular-foundation</a> from Madmimi comes with a modal service that works exceptionally well<br>for pushing modals onto your app views. However, one thing that I found to be lacking is the ability to access a<br><a href="https://docs.angularjs.org/api/ng/type/form.FormController" target="_blank" rel="external">FormController</a> from the modal DOM. I ended up patching my copy<br>of angular-foundation and thought the quick fix might be useful for others.</p>
+<h3 id="Originally_mentioned_here">Originally mentioned here</h3><p>This stack overflow <a href="http://stackoverflow.com/questions/15935224/angularjs-access-formcontroller-of-a-form-placed-inside-transcluded-directive-f" target="_blank" rel="external">post</a> came handy. Highy recommended reading.</p>
+<h3 id="Changeset">Changeset</h3><p>Assuming you are working with their templates dist JS, namely <code>mm-foundation-tpls.js</code>,</p>
+<ol>
+<li>Add <code>formCtrl: &#39;=&#39;</code> to <code>modalWindow</code> directive</li>
+<li>Set it to the desired form controller in the <code>link</code> function</li>
+<li>Expose it on the outside scope by specifying in <code>attrs</code></li>
+</ol>
+<p>Here is the gist:<br><script src="//gist.github.com/charandas/02d177e71c8de35e4db1.js"></script></p>
+<h3 id="How_to_Use">How to Use</h3><p>Now to access it in <code>ModalInstanceCtrl</code>, access it via <code>$scope.$parent.formCtrl</code>. Although a little hacky, it does the job.</p>
+<p>The readers are encouraged to covert this to a PR, if they so wish. One possible way might be through exposing a property on the instance<br>returned by <code>$modal.open</code>. Until then, use this patch on your own copy of <code>mm-foundation.js</code>.</p>
+
+        
+            
+        
+    </div>
+    <div class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/angular/">angular</a> <a class="tag tag--primary tag--small t-link" href="/tags/angular-foundation/">angular-foundation</a> <a class="tag tag--primary tag--small t-link" href="/tags/forms/">forms</a>
+
+            </div>
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2014/07/04/improved-angular-foundation-modal-with-timeout/"  data-tooltip="Improved boilerplate when using Madmimi&#39;s angular-foundation $modal">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2014/06/11/testing-your-ui-router-configuration/" data-tooltip="Unit-test your ui-router configuration">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://infinitecaus.es/2014/06/21/form-controller-modal/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://infinitecaus.es/2014/06/21/form-controller-modal/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://infinitecaus.es/2014/06/21/form-controller-modal/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                <i class="fa fa-comment-o"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+            <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+        
+    </div>
+    <div class="post-bottom-bar">
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2014/07/04/improved-angular-foundation-modal-with-timeout/"  data-tooltip="Improved boilerplate when using Madmimi&#39;s angular-foundation $modal">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2014/06/11/testing-your-ui-router-configuration/" data-tooltip="Unit-test your ui-router configuration">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://infinitecaus.es/2014/06/21/form-controller-modal/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://infinitecaus.es/2014/06/21/form-controller-modal/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://infinitecaus.es/2014/06/21/form-controller-modal/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                <i class="fa fa-comment-o"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2015 Charandas Batra-Daitch. Creative Commons Attribution-ShareAlike.
+    </span>
+</footer>
+
+            </div>
+        </div>
+        <div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="http://www.gravatar.com/avatar/511d6c5e91afae05e2f1468adca2fdd5?s=110"/>
+        
+            <h4 id="about-card-name">Charandas Batra-Daitch</h4>
+        
+            <h5 id="about-card-bio">I am Charandas, a developer, generalist and hacker originally from India, now based in the US. I am passionate about building mobile and web apps that challenge the problems of data and scale. I blog about technology here and my projects on github might be of your interest.</h5>
+        
+        
+        
+    </div>
+</div>
+        <div id="cover" style="background-image:url('/assets/images/cover.png');"></div>
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/script.min.js" type="text/javascript"></script>
+<!--SCRIPTS END-->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'bardo-io';
+        (function() {
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+</html>
