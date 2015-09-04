@@ -7,7 +7,7 @@ title: Charandas Batra-Daitch
 subtitle: Web Developer-Evangelist
 description: Passionate about all things data, scale, and web
 author: Charandas Batra-Daitch
-language:
+language: en
 timezone: America/New_York
 
 # URL
@@ -34,7 +34,7 @@ titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 future: true
 highlight:
@@ -81,8 +81,13 @@ deploy:
   repo: git@github.com:charandas/charandas.github.io.git
 
 server:
-  port: 4000
+  port: 6001
   log: true
-  ip: 0.0.0.0
+  ip: 127.0.0.1
 
 disqus_shortname: bardo-io
+
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
