@@ -8,12 +8,10 @@ subject: module loaders
 layout: post
 ---
 
-[keen-js](https://github.com/keen/keen-js/blob/master/package.json) specifies `superagent: '^0.21.0` as of version `3.2.7`.
-
-If you are using JSPM to include keen-js, and getting the CORS error on client API calls like so:
+`superagent` must have streamlined their browser lib in the recent versions. My test with 1.3.0 went well. However with `keen-js` [depending](https://github.com/keen/keen-js/blob/master/package.json) on `^0.21.0` as of version `3.2.7`, you will get this CORS error (different from the IE CORS issue outlined [here](https://github.com/keen/keen-js/issues/237)) on client API calls like so:
 {%gist charandas/f148c9cca1ec9412e8b7 %}
 
-`superagent` must have streamlined their browser lib in the recent versions. My test with 1.3.0 went well. How do we fix this until `keen-js` moves on:
+A temporary way to fix it until `keen-js` moves on is to:
 
 1. Ensure you are using `npm:keen-js` and not `github:keen/keen-js`.
 2. Now install superagent 1.3.0. `jspm install npm:superagent@1.3.0`
