@@ -9,7 +9,7 @@ layout: post
 ---
 
 ui-router is a great tool for those of us in the Angular realm. It gives a more logical way to represent the state of an application
-than just plain ol' URLs. This post is not going to be a hands-on tutorial post, but the intent is throw around some ideas about
+than just plain old URLs. This post is not going to be a <!-- more --> hands-on tutorial post, but the intent is throw around some ideas about
 structuring the root controller of your angular app.
 
 ### Root Controller and Saving the Root URL ###

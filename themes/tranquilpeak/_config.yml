@@ -39,10 +39,10 @@ sidebar:
             title: global.tags
             url: /all-tags
             icon: tags
-        #archives:
-        #    title: global.archives
-        #    url: /all-archives
-        #    icon: archive
+        archives:
+            title: global.archives
+            url: /all-archives
+            icon: archive
         search:
             title: global.search
             url: /#search

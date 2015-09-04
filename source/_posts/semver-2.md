@@ -8,7 +8,7 @@ subject: Software Versioning
 layout: post
 ---
 
-Semantic versioning entails tagging your software at every stage of the development process. The term and scheme was proposed by [Tom
+Semantic versioning entails tagging your software at every stage of the development process. The term and scheme was proposed by <!-- more --> [Tom
 Preston-Werner](http://en.wikipedia.org/wiki/Tom_Preston-Werner) as a way to help developers manage what he called "dependency hell". Also known as `semver`, it has now reached the version
 2.0.0 and I certainly feel that having it standardized as such would provide direction for the development community at large.
 

@@ -8,7 +8,7 @@ subject: module loaders
 layout: post
 ---
 
-`superagent` must have streamlined their browser lib in the recent versions. My test with 1.3.0 went well. However with `keen-js` [depending](https://github.com/keen/keen-js/blob/master/package.json) on `^0.21.0` as of version `3.2.7`, you will get this CORS error (different from the IE CORS issue outlined [here](https://github.com/keen/keen-js/issues/237)) on client API calls like so:
+`superagent` must have streamlined their browser lib in the recent versions. My test with 1.3.0 went well. However with `keen-js` <!-- more --> [depending](https://github.com/keen/keen-js/blob/master/package.json) on `^0.21.0` as of version `3.2.7`, you will get this CORS error (different from the IE CORS issue outlined [here](https://github.com/keen/keen-js/issues/237)) on client API calls like so:
 {%gist charandas/f148c9cca1ec9412e8b7 %}
 
 A temporary way to fix it until `keen-js` moves on is to:

@@ -9,12 +9,8 @@ layout: post
 ---
 
 
-**EDIT: Aug 20th 2014: found a minor bug with the way manual dismisses/closes were setting `.closed` to `true`
-but were missing the case where user triggered close/dismiss using `ModalInstanceCtrl` `$scope.ok` or `$scope.cancel`. The gist has been updated to set that for all cases in the `unregister`
-function. Also, the unregister function would now need to be called in the wrapper's dismiss and closed for pool maintainence.**
-
 In my earlier {% post_link angular-foundation-modal-with-timeout post%}, I presented the problem of not being able to intercept
-the closing/dismissing of a modal from the UI. While searching for an answer to that problem I ended up improving and simplifying the ModalService wrapper.
+the closing/dismissing of a modal from the UI. While searching for an answer <!-- more --> to that problem I ended up improving and simplifying the ModalService wrapper.
 
 ### Salient Features of this Update ###
 

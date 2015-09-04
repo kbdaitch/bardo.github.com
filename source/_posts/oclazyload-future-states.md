@@ -8,9 +8,7 @@ subject: JavaScript
 layout: post
 ---
 
-<< Don't forget to the read the newer {% post_link ng-deferred-bootstrap-like-with-oclazyload post%} for related stuff >>
-
-Recently, I was able to implement lazy loading of ui-router in my single page app. I had to extend myself a little bit because
+Recently, I was able to implement lazy loading of ui-router in my single page app. I had to <!-- more --> extend myself a little bit because
 the base ui-router package doesn't come with all the supports for this. It provides a `stateNotFound` event
 that can be tapped into by your code to register the new states. This is where `futureStates` API by [ui-router-extras](https://github.com/christopherthielen/ui-router-extras) comes in. The latter
 allows you to use any lazy loading Angular mechanism for loading a missing state. 

@@ -9,7 +9,7 @@ layout: post
 ---
 
 [Angular-foundation](http://madmimi.github.io/angular-foundation/) from Madmimi comes with a modal service that works exceptionally well
-for pushing modals onto your app views. However, one thing that I found to be lacking is the ability to access a 
+for pushing modals onto your app views. However, one thing that I found to be lacking is <!-- more --> the ability to access a 
 [FormController](https://docs.angularjs.org/api/ng/type/form.FormController) from the modal DOM. I ended up patching my copy
 of angular-foundation and thought the quick fix might be useful for others.
 

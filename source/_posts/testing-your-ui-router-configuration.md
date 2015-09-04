@@ -8,7 +8,7 @@ subject: JavaScript
 layout: post
 ---
 
-`ui-router` comes with a lot of goodies through it's rich states configuration. If you are like me and are tapping into all of what `$stateProvider.state` method provides through its parameters, all your data is injected through resolvers and state's data object, while all the enter/exit state logic comes in through the handlers (`onEnter` and `onExit`). 
+`ui-router` comes with a lot of goodies through it's rich states configuration. If you are like me and are tapping into all <!-- more --> of what `$stateProvider.state` method provides through its parameters, all your data is injected through resolvers and state's data object, while all the enter/exit state logic comes in through the handlers (`onEnter` and `onExit`). 
 
 As you get initiated into ui-router, you may begin to notice that your code is slowly migrating from controllers to the state configuration. Controller thus becomes, more and more, a decorator of the view. This is all good as long as unit-test coverage doesn't suffer. To ensure your states are well tested, take heart and start writing unit-tests to measure whether your states are happy!
 
