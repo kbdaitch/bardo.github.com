@@ -18,7 +18,7 @@
 <meta property="og:url" content="http://infinitecaus.es/2014/07/04/improved-angular-foundation-modal-with-timeout/index.html">
 <meta property="og:site_name" content="Charandas Batra-Daitch">
 <meta property="og:description" content="Wrap angular-foundation $modal so as to add goodies">
-<meta property="og:updated_time" content="2015-09-02T20:31:05.795Z">
+<meta property="og:updated_time" content="2015-09-04T22:32:33.578Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Improved boilerplate when using Madmimi's angular-foundation $modal">
 <meta name="twitter:description" content="Wrap angular-foundation $modal so as to add goodies">
@@ -95,6 +95,18 @@
                 
                     <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
                     <span class="sidebar-button-desc">Tags</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-archives"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">Archive</span>
                 </a>
         </li>
         
@@ -218,8 +230,7 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p><strong>EDIT: Aug 20th 2014: found a minor bug with the way manual dismisses/closes were setting <code>.closed</code> to <code>true</code><br>but were missing the case where user triggered close/dismiss using <code>ModalInstanceCtrl</code> <code>$scope.ok</code> or <code>$scope.cancel</code>. The gist has been updated to set that for all cases in the <code>unregister</code><br>function. Also, the unregister function would now need to be called in the wrapper’s dismiss and closed for pool maintainence.</strong></p>
-<p>In my earlier <a href="/2014/06/07/angular-foundation-modal-with-timeout/" title="post">post</a>, I presented the problem of not being able to intercept<br>the closing/dismissing of a modal from the UI. While searching for an answer to that problem I ended up improving and simplifying the ModalService wrapper.</p>
+            <p>In my earlier <a href="/2014/06/07/angular-foundation-modal-with-timeout/" title="post">post</a>, I presented the problem of not being able to intercept<br>the closing/dismissing of a modal from the UI. While searching for an answer <a id="more"></a> to that problem I ended up improving and simplifying the ModalService wrapper.</p>
 <h3 id="Salient_Features_of_this_Update">Salient Features of this Update</h3><ol>
 <li><code>closed</code> boolean: the wrapper around <code>$modal</code>, namely <code>ModalService</code>, now relies on a boolean for gating the inner instances close and dismiss methods. This goes a long way in simplifying our timeout code. We no longer cancel the timeout in the event of a manual close or instead. The noop like behavior of close and dismiss wrappers doesn’t<br>hurt at all.</li>
 <li><code>unregister</code> and pooling: <code>unregister</code> is a private method that keeps the modal <code>pool</code> (a newly introduced private data structure for book-keeping) maintained in event of user-enforced close<br>or dismiss. You will notice that the <code>ModalInstanceCtrl</code> has the extra <code>unregister</code> calls. This is the answer to my question of intercepting dismissing/closing from the UI. Once a modal is unregistered the boolean that we introduced protects from using the inner instance again.</li>

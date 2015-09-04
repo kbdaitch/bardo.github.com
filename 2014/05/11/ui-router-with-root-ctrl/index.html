@@ -18,7 +18,7 @@
 <meta property="og:url" content="http://infinitecaus.es/2014/05/11/ui-router-with-root-ctrl/index.html">
 <meta property="og:site_name" content="Charandas Batra-Daitch">
 <meta property="og:description" content="Instantiating a root controller without wasting a url, and also not coding it in your HTML.">
-<meta property="og:updated_time" content="2015-09-02T20:31:05.799Z">
+<meta property="og:updated_time" content="2015-09-04T22:33:04.305Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Using a root controller with ui-router">
 <meta name="twitter:description" content="Instantiating a root controller without wasting a url, and also not coding it in your HTML.">
@@ -95,6 +95,18 @@
                 
                     <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
                     <span class="sidebar-button-desc">Tags</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-archives"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">Archive</span>
                 </a>
         </li>
         
@@ -218,7 +230,7 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>ui-router is a great tool for those of us in the Angular realm. It gives a more logical way to represent the state of an application<br>than just plain ol’ URLs. This post is not going to be a hands-on tutorial post, but the intent is throw around some ideas about<br>structuring the root controller of your angular app.</p>
+            <p>ui-router is a great tool for those of us in the Angular realm. It gives a more logical way to represent the state of an application<br>than just plain old URLs. This post is not going to be a <a id="more"></a> hands-on tutorial post, but the intent is throw around some ideas about<br>structuring the root controller of your angular app.</p>
 <h3 id="Root_Controller_and_Saving_the_Root_URL">Root Controller and Saving the Root URL</h3><p>Root controller allows one to instantiate some global data and services, and maybe even setup a <code>$global</code> service to act as a shim.</p>
 <p>Root controller can often be seen in the base <code>index.html</code> of a project. In this case, it is used by calling the <code>ng-controller</code> directive on a <code>&lt;head&gt;</code> or <code>&lt;body&gt;</code> tag.<br>Alternatively, it could be mapped to a URL (the base URL for instance: “/“), and loaded via an <code>ng-view</code> in <code>index.html</code>; I am personally not a fan of using up the root URL for this purpose.</p>
 <p>With ui-router’s <code>abstract</code> state feature, one could save the URL as well as save hardcoding a controller definition in HTML. I think this is fruitful, as the <code>routes.js</code> (or whatever you call it)<br>ends up becoming a decisive place to check controller mappings. </p>

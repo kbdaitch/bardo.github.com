@@ -18,7 +18,7 @@
 <meta property="og:url" content="http://infinitecaus.es/2014/06/11/testing-your-ui-router-configuration/index.html">
 <meta property="og:site_name" content="Charandas Batra-Daitch">
 <meta property="og:description" content="Unit-test your ui-router configuration">
-<meta property="og:updated_time" content="2015-09-02T20:31:05.799Z">
+<meta property="og:updated_time" content="2015-09-04T22:33:16.964Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Unit-test your ui-router configuration">
 <meta name="twitter:description" content="Unit-test your ui-router configuration">
@@ -95,6 +95,18 @@
                 
                     <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
                     <span class="sidebar-button-desc">Tags</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-archives"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">Archive</span>
                 </a>
         </li>
         
@@ -218,7 +230,7 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p><code>ui-router</code> comes with a lot of goodies through it’s rich states configuration. If you are like me and are tapping into all of what <code>$stateProvider.state</code> method provides through its parameters, all your data is injected through resolvers and state’s data object, while all the enter/exit state logic comes in through the handlers (<code>onEnter</code> and <code>onExit</code>). </p>
+            <p><code>ui-router</code> comes with a lot of goodies through it’s rich states configuration. If you are like me and are tapping into all <a id="more"></a> of what <code>$stateProvider.state</code> method provides through its parameters, all your data is injected through resolvers and state’s data object, while all the enter/exit state logic comes in through the handlers (<code>onEnter</code> and <code>onExit</code>). </p>
 <p>As you get initiated into ui-router, you may begin to notice that your code is slowly migrating from controllers to the state configuration. Controller thus becomes, more and more, a decorator of the view. This is all good as long as unit-test coverage doesn’t suffer. To ensure your states are well tested, take heart and start writing unit-tests to measure whether your states are happy!</p>
 <h3 id="Testing_the_states">Testing the states</h3><p>My initial motivation came from this stack overflow <a href="http://stackoverflow.com/questions/20433485/angular-ui-router-unit-testing-states-to-urls" target="_blank" rel="external">post</a>, so feel free to give it a read.<br>I will try to cover what worked for me.</p>
 <blockquote>

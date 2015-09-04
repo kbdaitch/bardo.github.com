@@ -18,7 +18,7 @@
 <meta property="og:url" content="http://infinitecaus.es/2014/08/26/oclazyload-future-states/index.html">
 <meta property="og:site_name" content="Charandas Batra-Daitch">
 <meta property="og:description" content="Fasten your app by reducing JS payload">
-<meta property="og:updated_time" content="2015-09-02T20:31:05.795Z">
+<meta property="og:updated_time" content="2015-09-04T22:34:29.729Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Lazy Loading ui-router states with ocLazyLoad and ui-router-extras futureStates">
 <meta name="twitter:description" content="Fasten your app by reducing JS payload">
@@ -95,6 +95,18 @@
                 
                     <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
                     <span class="sidebar-button-desc">Tags</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-archives"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">Archive</span>
                 </a>
         </li>
         
@@ -218,8 +230,7 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>&lt;&lt; Don’t forget to the read the newer <a href="/2014/10/13/ng-deferred-bootstrap-like-with-oclazyload/" title="post">post</a> for related stuff &gt;&gt;</p>
-<p>Recently, I was able to implement lazy loading of ui-router in my single page app. I had to extend myself a little bit because<br>the base ui-router package doesn’t come with all the supports for this. It provides a <code>stateNotFound</code> event<br>that can be tapped into by your code to register the new states. This is where <code>futureStates</code> API by <a href="https://github.com/christopherthielen/ui-router-extras" target="_blank" rel="external">ui-router-extras</a> comes in. The latter<br>allows you to use any lazy loading Angular mechanism for loading a missing state. </p>
+            <p>Recently, I was able to implement lazy loading of ui-router in my single page app. I had to <a id="more"></a> extend myself a little bit because<br>the base ui-router package doesn’t come with all the supports for this. It provides a <code>stateNotFound</code> event<br>that can be tapped into by your code to register the new states. This is where <code>futureStates</code> API by <a href="https://github.com/christopherthielen/ui-router-extras" target="_blank" rel="external">ui-router-extras</a> comes in. The latter<br>allows you to use any lazy loading Angular mechanism for loading a missing state. </p>
 <p>So to reiterate, the <code>futureStates</code> implementation is all about describing the state that is to be lazily loaded. The way to lazy load is left to you to define. We will use <a href="https://github.com/ocombe/ocLazyLoad" target="_blank" rel="external">ocLazyLoad</a> for our purposes.</p>
 <p>I have a GitHub repo showing a test app demonstrating this <a href="https://github.com/charandas/ui-router-lazy-example" target="_blank" rel="external">here</a>.</p>
 <p>The App runs <a href="http://infinitecaus.es/ui-router-lazy-example/app">here</a>. The pertinent code is in <a href="https://github.com/charandas/ui-router-lazy-example/blob/master/app/js/app.js" target="_blank" rel="external">app.js</a>, shown in gist here:<br><script src="//gist.github.com/charandas/831560ade572ad9739cd.js"></script></p>

@@ -18,7 +18,7 @@
 <meta property="og:url" content="http://infinitecaus.es/2014/06/07/angular-foundation-modal-with-timeout/index.html">
 <meta property="og:site_name" content="Charandas Batra-Daitch">
 <meta property="og:description" content="Wrap angular-foundation $modal to reduce boilerplate.">
-<meta property="og:updated_time" content="2015-09-02T20:31:05.795Z">
+<meta property="og:updated_time" content="2015-09-04T22:36:17.813Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Reducing boilerplate when using Madmimi's angular-foundation $modal">
 <meta name="twitter:description" content="Wrap angular-foundation $modal to reduce boilerplate.">
@@ -95,6 +95,18 @@
                 
                     <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
                     <span class="sidebar-button-desc">Tags</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-archives"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">Archive</span>
                 </a>
         </li>
         
@@ -219,7 +231,7 @@
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
             <p><a href="http://madmimi.github.io/angular-foundation/" target="_blank" rel="external">Angular-foundation</a> from Madmimi comes with a modal service that can be pretty useful when pushing modals onto the views of your<br>angular app. The API is pretty flexible as provided <a href="http://madmimi.github.io/angular-foundation/#/modal" target="_blank" rel="external">here</a>.</p>
-<p>As mentioned in the example in the JavaScript, you can accomplish a range of modals pretty easily. However, for simpler modals, this can get really tedious if all your ModalInstanceCtrl is going to do is bringing the modal up and dismissing/closing it. Instead, here is my take on the modal instance controller.<br><script src="//gist.github.com/charandas/140341acbc49a8a3f97b.js"></script></p>
+<p>As mentioned in <a id="more"></a> the example in the JavaScript, you can accomplish a range of modals pretty easily. However, for simpler modals, this can get really tedious if all your ModalInstanceCtrl is going to do is bringing the modal up and dismissing/closing it. Instead, here is my take on the modal instance controller.<br><script src="//gist.github.com/charandas/140341acbc49a8a3f97b.js"></script></p>
 <p>Also, a wrapper around <code>$modal</code>, namely <code>ModalService</code> could be written to automatically plug this controller in with some template defaults. Like so,<br><script src="//gist.github.com/charandas/ed6bf36215888c4a8cba.js"></script></p>
 <h3 id="What_did_we_accomplish">What did we accomplish</h3><ol>
 <li><code>timeout</code>: As you can see the service written by us has a parameter called <code>timeout</code>. This ensures that we have ability to push self-poppable modals onto the view.<br>L65 ensures that the modal made has a scheduled timeout that can dismiss it. Not only that, by using the close function of our wrapper, we can cancel any scheduled timeouts in case of a user action such as “our app becoming active”.</li>

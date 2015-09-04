@@ -18,7 +18,7 @@
 <meta property="og:url" content="http://infinitecaus.es/2014/06/21/form-controller-modal/index.html">
 <meta property="og:site_name" content="Charandas Batra-Daitch">
 <meta property="og:description" content="Add the ability to $setValidity and more on a form inside a modal">
-<meta property="og:updated_time" content="2015-09-02T20:31:05.795Z">
+<meta property="og:updated_time" content="2015-09-04T22:31:46.488Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Patch angular-foundation to expose a form controller">
 <meta name="twitter:description" content="Add the ability to $setValidity and more on a form inside a modal">
@@ -95,6 +95,18 @@
                 
                     <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
                     <span class="sidebar-button-desc">Tags</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-archives"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">Archive</span>
                 </a>
         </li>
         
@@ -218,7 +230,7 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p><a href="http://madmimi.github.io/angular-foundation/" target="_blank" rel="external">Angular-foundation</a> from Madmimi comes with a modal service that works exceptionally well<br>for pushing modals onto your app views. However, one thing that I found to be lacking is the ability to access a<br><a href="https://docs.angularjs.org/api/ng/type/form.FormController" target="_blank" rel="external">FormController</a> from the modal DOM. I ended up patching my copy<br>of angular-foundation and thought the quick fix might be useful for others.</p>
+            <p><a href="http://madmimi.github.io/angular-foundation/" target="_blank" rel="external">Angular-foundation</a> from Madmimi comes with a modal service that works exceptionally well<br>for pushing modals onto your app views. However, one thing that I found to be lacking is <a id="more"></a> the ability to access a<br><a href="https://docs.angularjs.org/api/ng/type/form.FormController" target="_blank" rel="external">FormController</a> from the modal DOM. I ended up patching my copy<br>of angular-foundation and thought the quick fix might be useful for others.</p>
 <h3 id="Originally_mentioned_here">Originally mentioned here</h3><p>This stack overflow <a href="http://stackoverflow.com/questions/15935224/angularjs-access-formcontroller-of-a-form-placed-inside-transcluded-directive-f" target="_blank" rel="external">post</a> came handy. Highy recommended reading.</p>
 <h3 id="Changeset">Changeset</h3><p>Assuming you are working with their templates dist JS, namely <code>mm-foundation-tpls.js</code>,</p>
 <ol>

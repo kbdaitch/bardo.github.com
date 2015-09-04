@@ -18,7 +18,7 @@
 <meta property="og:url" content="http://infinitecaus.es/2014/10/13/ng-deferred-bootstrap-like-with-oclazyload/index.html">
 <meta property="og:site_name" content="Charandas Batra-Daitch">
 <meta property="og:description" content="futureStates.addResolve with $ocLazyLoad for eager loading">
-<meta property="og:updated_time" content="2015-09-02T20:31:05.795Z">
+<meta property="og:updated_time" content="2015-09-04T22:35:25.567Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Use $ocLazyLoad to achieve your own angular-deferred-bootstrap">
 <meta name="twitter:description" content="futureStates.addResolve with $ocLazyLoad for eager loading">
@@ -95,6 +95,18 @@
                 
                     <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
                     <span class="sidebar-button-desc">Tags</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-archives"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">Archive</span>
                 </a>
         </li>
         
@@ -218,7 +230,7 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>A few days ago, it dawned on me that the full futureStates implemention as shown in my previous blog <a href="/2014/08/26/oclazyload-future-states/" title="post">post</a> was not needed by my app. I was okay with eagerly loading the JavaScript, however I wanted to acheive two things, namely,</p>
+            <p>A few days ago, it dawned on me that the full futureStates implemention as shown in my previous blog <a href="/2014/08/26/oclazyload-future-states/" title="post">post</a> was not needed by my app. I was okay with eagerly loading the JavaScript, however <a id="more"></a> I wanted to acheive two things, namely,</p>
 <ol>
 <li>Restrict what JavaScript I wanted to load in the entire lifecyle of an app. To me, it was pretty deterministic what I wanted to load or not depending on a remote JSON resource.</li>
 <li>I wanted some abilitites of the package <a href="https://github.com/philippd/angular-deferred-bootstrap" target="_blank" rel="external">angular-deferred-bootstrap</a> but in a way that I didn’t have replication of services and DI-injected resources that they fetched. I wanted these because <code>ui-router</code> would otherwise force me to<br>callout certain resolve-names needlessly. So for instance, if I have a <code>ListingService</code> that on app start, loads<br>a <code>listings.json</code> using a function <code>ListingService.getAll</code> and subsequently, I could make other calls to <code>LIstingService</code><br>such as <code>query</code> or <code>get</code>. So I did the <code>getAll</code> in the root state, and then proceeded to use the <code>ListingService</code> like so:<script src="//gist.github.com/charandas/c00c63a47a8f921773d0.js"></script>

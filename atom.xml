@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Web Developer-Evangelist]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://infinitecaus.es/"/>
-  <updated>2015-09-04T21:37:03.665Z</updated>
+  <updated>2015-09-04T22:31:24.023Z</updated>
   <id>http://infinitecaus.es/</id>
   
   <author>
@@ -19,8 +19,8 @@
     <link href="http://infinitecaus.es/2015/09/02/using-keen-js-with-jspm/"/>
     <id>http://infinitecaus.es/2015/09/02/using-keen-js-with-jspm/</id>
     <published>2015-09-02T20:32:00.000Z</published>
-    <updated>2015-09-04T21:37:03.665Z</updated>
-    <content type="html"><![CDATA[<p><code>superagent</code> must have streamlined their browser lib in the recent versions. My test with 1.3.0 went well. However with <code>keen-js</code> <a href="https://github.com/keen/keen-js/blob/master/package.json" target="_blank" rel="external">depending</a> on <code>^0.21.0</code> as of version <code>3.2.7</code>, you will get this CORS error (different from the IE CORS issue outlined <a href="https://github.com/keen/keen-js/issues/237" target="_blank" rel="external">here</a>) on client API calls like so:<br><script src="//gist.github.com/charandas/f148c9cca1ec9412e8b7.js"></script></p>
+    <updated>2015-09-04T22:31:24.023Z</updated>
+    <content type="html"><![CDATA[<p><code>superagent</code> must have streamlined their browser lib in the recent versions. My test with 1.3.0 went well. However with <code>keen-js</code> <a id="more"></a> <a href="https://github.com/keen/keen-js/blob/master/package.json" target="_blank" rel="external">depending</a> on <code>^0.21.0</code> as of version <code>3.2.7</code>, you will get this CORS error (different from the IE CORS issue outlined <a href="https://github.com/keen/keen-js/issues/237" target="_blank" rel="external">here</a>) on client API calls like so:<br><script src="//gist.github.com/charandas/f148c9cca1ec9412e8b7.js"></script></p>
 <p>A temporary way to fix it until <code>keen-js</code> moves on is to:</p>
 <ol>
 <li>Ensure you are using <code>npm:keen-js</code> and not <code>github:keen/keen-js</code>.</li>
@@ -47,8 +47,8 @@
     <link href="http://infinitecaus.es/2015/06/24/subnet-sum-with-fixed-constituent-size/"/>
     <id>http://infinitecaus.es/2015/06/24/subnet-sum-with-fixed-constituent-size/</id>
     <published>2015-06-24T19:40:00.000Z</published>
-    <updated>2015-09-02T20:31:05.795Z</updated>
-    <content type="html"><![CDATA[<p>On recently applying for a UX position at <a href="https://www.elastic.co/" target="_blank" rel="external">Elastic</a><br>for their product <a href="https://www.elastic.co/products/kibana" target="_blank" rel="external">Kibana</a>, I was given this complex yet<br>intriguing challenge:</p>
+    <updated>2015-09-04T22:34:04.494Z</updated>
+    <content type="html"><![CDATA[<p>On recently applying for a UX position at <a href="https://www.elastic.co/" target="_blank" rel="external">Elastic</a><br>for their product <a href="https://www.elastic.co/products/kibana" target="_blank" rel="external">Kibana</a>, I was given this complex yet<br>intriguing challenge: <a id="more"></a></p>
 <blockquote>
 <p>In javascript: Write a function that, given an array of<br>integers (x), and an integer (y), returns true if any two of<br>the integers in x add up to y. (Optional) Now, write a<br>function that, given the above arguments and an additional<br>integer (z), returns true if any z of the integers in x add<br>up to y.</p>
 </blockquote>
@@ -75,8 +75,8 @@
     <link href="http://infinitecaus.es/2014/10/13/ng-deferred-bootstrap-like-with-oclazyload/"/>
     <id>http://infinitecaus.es/2014/10/13/ng-deferred-bootstrap-like-with-oclazyload/</id>
     <published>2014-10-14T00:48:00.000Z</published>
-    <updated>2015-09-02T20:31:05.795Z</updated>
-    <content type="html"><![CDATA[<p>A few days ago, it dawned on me that the full futureStates implemention as shown in my previous blog <a href="/2014/08/26/oclazyload-future-states/" title="post">post</a> was not needed by my app. I was okay with eagerly loading the JavaScript, however I wanted to acheive two things, namely,</p>
+    <updated>2015-09-04T22:35:25.567Z</updated>
+    <content type="html"><![CDATA[<p>A few days ago, it dawned on me that the full futureStates implemention as shown in my previous blog <a href="/2014/08/26/oclazyload-future-states/" title="post">post</a> was not needed by my app. I was okay with eagerly loading the JavaScript, however <a id="more"></a> I wanted to acheive two things, namely,</p>
 <ol>
 <li>Restrict what JavaScript I wanted to load in the entire lifecyle of an app. To me, it was pretty deterministic what I wanted to load or not depending on a remote JSON resource.</li>
 <li>I wanted some abilitites of the package <a href="https://github.com/philippd/angular-deferred-bootstrap" target="_blank" rel="external">angular-deferred-bootstrap</a> but in a way that I didn’t have replication of services and DI-injected resources that they fetched. I wanted these because <code>ui-router</code> would otherwise force me to<br>callout certain resolve-names needlessly. So for instance, if I have a <code>ListingService</code> that on app start, loads<br>a <code>listings.json</code> using a function <code>ListingService.getAll</code> and subsequently, I could make other calls to <code>LIstingService</code><br>such as <code>query</code> or <code>get</code>. So I did the <code>getAll</code> in the root state, and then proceeded to use the <code>ListingService</code> like so:<script src="//gist.github.com/charandas/c00c63a47a8f921773d0.js"></script>
@@ -112,9 +112,8 @@ If you notice, I would now be forced to couple the <code>allListings</code> reso
     <link href="http://infinitecaus.es/2014/08/26/oclazyload-future-states/"/>
     <id>http://infinitecaus.es/2014/08/26/oclazyload-future-states/</id>
     <published>2014-08-26T11:48:00.000Z</published>
-    <updated>2015-09-02T20:31:05.795Z</updated>
-    <content type="html"><![CDATA[<p>&lt;&lt; Don’t forget to the read the newer <a href="/2014/10/13/ng-deferred-bootstrap-like-with-oclazyload/" title="post">post</a> for related stuff &gt;&gt;</p>
-<p>Recently, I was able to implement lazy loading of ui-router in my single page app. I had to extend myself a little bit because<br>the base ui-router package doesn’t come with all the supports for this. It provides a <code>stateNotFound</code> event<br>that can be tapped into by your code to register the new states. This is where <code>futureStates</code> API by <a href="https://github.com/christopherthielen/ui-router-extras" target="_blank" rel="external">ui-router-extras</a> comes in. The latter<br>allows you to use any lazy loading Angular mechanism for loading a missing state. </p>
+    <updated>2015-09-04T22:34:29.729Z</updated>
+    <content type="html"><![CDATA[<p>Recently, I was able to implement lazy loading of ui-router in my single page app. I had to <a id="more"></a> extend myself a little bit because<br>the base ui-router package doesn’t come with all the supports for this. It provides a <code>stateNotFound</code> event<br>that can be tapped into by your code to register the new states. This is where <code>futureStates</code> API by <a href="https://github.com/christopherthielen/ui-router-extras" target="_blank" rel="external">ui-router-extras</a> comes in. The latter<br>allows you to use any lazy loading Angular mechanism for loading a missing state. </p>
 <p>So to reiterate, the <code>futureStates</code> implementation is all about describing the state that is to be lazily loaded. The way to lazy load is left to you to define. We will use <a href="https://github.com/ocombe/ocLazyLoad" target="_blank" rel="external">ocLazyLoad</a> for our purposes.</p>
 <p>I have a GitHub repo showing a test app demonstrating this <a href="https://github.com/charandas/ui-router-lazy-example" target="_blank" rel="external">here</a>.</p>
 <p>The App runs <a href="http://infinitecaus.es/ui-router-lazy-example/app">here</a>. The pertinent code is in <a href="https://github.com/charandas/ui-router-lazy-example/blob/master/app/js/app.js" target="_blank" rel="external">app.js</a>, shown in gist here:<br><script src="//gist.github.com/charandas/831560ade572ad9739cd.js"></script></p>
@@ -145,9 +144,8 @@ If you notice, I would now be forced to couple the <code>allListings</code> reso
     <link href="http://infinitecaus.es/2014/07/04/improved-angular-foundation-modal-with-timeout/"/>
     <id>http://infinitecaus.es/2014/07/04/improved-angular-foundation-modal-with-timeout/</id>
     <published>2014-07-04T07:15:00.000Z</published>
-    <updated>2015-09-02T20:31:05.795Z</updated>
-    <content type="html"><![CDATA[<p><strong>EDIT: Aug 20th 2014: found a minor bug with the way manual dismisses/closes were setting <code>.closed</code> to <code>true</code><br>but were missing the case where user triggered close/dismiss using <code>ModalInstanceCtrl</code> <code>$scope.ok</code> or <code>$scope.cancel</code>. The gist has been updated to set that for all cases in the <code>unregister</code><br>function. Also, the unregister function would now need to be called in the wrapper’s dismiss and closed for pool maintainence.</strong></p>
-<p>In my earlier <a href="/2014/06/07/angular-foundation-modal-with-timeout/" title="post">post</a>, I presented the problem of not being able to intercept<br>the closing/dismissing of a modal from the UI. While searching for an answer to that problem I ended up improving and simplifying the ModalService wrapper.</p>
+    <updated>2015-09-04T22:32:33.578Z</updated>
+    <content type="html"><![CDATA[<p>In my earlier <a href="/2014/06/07/angular-foundation-modal-with-timeout/" title="post">post</a>, I presented the problem of not being able to intercept<br>the closing/dismissing of a modal from the UI. While searching for an answer <a id="more"></a> to that problem I ended up improving and simplifying the ModalService wrapper.</p>
 <h3 id="Salient_Features_of_this_Update">Salient Features of this Update</h3><ol>
 <li><code>closed</code> boolean: the wrapper around <code>$modal</code>, namely <code>ModalService</code>, now relies on a boolean for gating the inner instances close and dismiss methods. This goes a long way in simplifying our timeout code. We no longer cancel the timeout in the event of a manual close or instead. The noop like behavior of close and dismiss wrappers doesn’t<br>hurt at all.</li>
 <li><code>unregister</code> and pooling: <code>unregister</code> is a private method that keeps the modal <code>pool</code> (a newly introduced private data structure for book-keeping) maintained in event of user-enforced close<br>or dismiss. You will notice that the <code>ModalInstanceCtrl</code> has the extra <code>unregister</code> calls. This is the answer to my question of intercepting dismissing/closing from the UI. Once a modal is unregistered the boolean that we introduced protects from using the inner instance again.</li>
@@ -182,8 +180,8 @@ If you notice, I would now be forced to couple the <code>allListings</code> reso
     <link href="http://infinitecaus.es/2014/06/21/form-controller-modal/"/>
     <id>http://infinitecaus.es/2014/06/21/form-controller-modal/</id>
     <published>2014-06-21T22:51:00.000Z</published>
-    <updated>2015-09-02T20:31:05.795Z</updated>
-    <content type="html"><![CDATA[<p><a href="http://madmimi.github.io/angular-foundation/" target="_blank" rel="external">Angular-foundation</a> from Madmimi comes with a modal service that works exceptionally well<br>for pushing modals onto your app views. However, one thing that I found to be lacking is the ability to access a<br><a href="https://docs.angularjs.org/api/ng/type/form.FormController" target="_blank" rel="external">FormController</a> from the modal DOM. I ended up patching my copy<br>of angular-foundation and thought the quick fix might be useful for others.</p>
+    <updated>2015-09-04T22:31:46.488Z</updated>
+    <content type="html"><![CDATA[<p><a href="http://madmimi.github.io/angular-foundation/" target="_blank" rel="external">Angular-foundation</a> from Madmimi comes with a modal service that works exceptionally well<br>for pushing modals onto your app views. However, one thing that I found to be lacking is <a id="more"></a> the ability to access a<br><a href="https://docs.angularjs.org/api/ng/type/form.FormController" target="_blank" rel="external">FormController</a> from the modal DOM. I ended up patching my copy<br>of angular-foundation and thought the quick fix might be useful for others.</p>
 <h3 id="Originally_mentioned_here">Originally mentioned here</h3><p>This stack overflow <a href="http://stackoverflow.com/questions/15935224/angularjs-access-formcontroller-of-a-form-placed-inside-transcluded-directive-f" target="_blank" rel="external">post</a> came handy. Highy recommended reading.</p>
 <h3 id="Changeset">Changeset</h3><p>Assuming you are working with their templates dist JS, namely <code>mm-foundation-tpls.js</code>,</p>
 <ol>
@@ -213,8 +211,8 @@ If you notice, I would now be forced to couple the <code>allListings</code> reso
     <link href="http://infinitecaus.es/2014/06/11/testing-your-ui-router-configuration/"/>
     <id>http://infinitecaus.es/2014/06/11/testing-your-ui-router-configuration/</id>
     <published>2014-06-11T21:26:00.000Z</published>
-    <updated>2015-09-02T20:31:05.799Z</updated>
-    <content type="html"><![CDATA[<p><code>ui-router</code> comes with a lot of goodies through it’s rich states configuration. If you are like me and are tapping into all of what <code>$stateProvider.state</code> method provides through its parameters, all your data is injected through resolvers and state’s data object, while all the enter/exit state logic comes in through the handlers (<code>onEnter</code> and <code>onExit</code>). </p>
+    <updated>2015-09-04T22:33:16.964Z</updated>
+    <content type="html"><![CDATA[<p><code>ui-router</code> comes with a lot of goodies through it’s rich states configuration. If you are like me and are tapping into all <a id="more"></a> of what <code>$stateProvider.state</code> method provides through its parameters, all your data is injected through resolvers and state’s data object, while all the enter/exit state logic comes in through the handlers (<code>onEnter</code> and <code>onExit</code>). </p>
 <p>As you get initiated into ui-router, you may begin to notice that your code is slowly migrating from controllers to the state configuration. Controller thus becomes, more and more, a decorator of the view. This is all good as long as unit-test coverage doesn’t suffer. To ensure your states are well tested, take heart and start writing unit-tests to measure whether your states are happy!</p>
 <h3 id="Testing_the_states">Testing the states</h3><p>My initial motivation came from this stack overflow <a href="http://stackoverflow.com/questions/20433485/angular-ui-router-unit-testing-states-to-urls" target="_blank" rel="external">post</a>, so feel free to give it a read.<br>I will try to cover what worked for me.</p>
 <blockquote>
@@ -262,9 +260,9 @@ If you notice, I would now be forced to couple the <code>allListings</code> reso
     <link href="http://infinitecaus.es/2014/06/07/angular-foundation-modal-with-timeout/"/>
     <id>http://infinitecaus.es/2014/06/07/angular-foundation-modal-with-timeout/</id>
     <published>2014-06-07T16:52:00.000Z</published>
-    <updated>2015-09-02T20:31:05.795Z</updated>
+    <updated>2015-09-04T22:36:17.813Z</updated>
     <content type="html"><![CDATA[<p><a href="http://madmimi.github.io/angular-foundation/" target="_blank" rel="external">Angular-foundation</a> from Madmimi comes with a modal service that can be pretty useful when pushing modals onto the views of your<br>angular app. The API is pretty flexible as provided <a href="http://madmimi.github.io/angular-foundation/#/modal" target="_blank" rel="external">here</a>.</p>
-<p>As mentioned in the example in the JavaScript, you can accomplish a range of modals pretty easily. However, for simpler modals, this can get really tedious if all your ModalInstanceCtrl is going to do is bringing the modal up and dismissing/closing it. Instead, here is my take on the modal instance controller.<br><script src="//gist.github.com/charandas/140341acbc49a8a3f97b.js"></script></p>
+<p>As mentioned in <a id="more"></a> the example in the JavaScript, you can accomplish a range of modals pretty easily. However, for simpler modals, this can get really tedious if all your ModalInstanceCtrl is going to do is bringing the modal up and dismissing/closing it. Instead, here is my take on the modal instance controller.<br><script src="//gist.github.com/charandas/140341acbc49a8a3f97b.js"></script></p>
 <p>Also, a wrapper around <code>$modal</code>, namely <code>ModalService</code> could be written to automatically plug this controller in with some template defaults. Like so,<br><script src="//gist.github.com/charandas/ed6bf36215888c4a8cba.js"></script></p>
 <h3 id="What_did_we_accomplish">What did we accomplish</h3><ol>
 <li><code>timeout</code>: As you can see the service written by us has a parameter called <code>timeout</code>. This ensures that we have ability to push self-poppable modals onto the view.<br>L65 ensures that the modal made has a scheduled timeout that can dismiss it. Not only that, by using the close function of our wrapper, we can cancel any scheduled timeouts in case of a user action such as “our app becoming active”.</li>
@@ -300,8 +298,8 @@ If you notice, I would now be forced to couple the <code>allListings</code> reso
     <link href="http://infinitecaus.es/2014/05/11/ui-router-with-root-ctrl/"/>
     <id>http://infinitecaus.es/2014/05/11/ui-router-with-root-ctrl/</id>
     <published>2014-05-11T17:06:00.000Z</published>
-    <updated>2015-09-02T20:31:05.799Z</updated>
-    <content type="html"><![CDATA[<p>ui-router is a great tool for those of us in the Angular realm. It gives a more logical way to represent the state of an application<br>than just plain ol’ URLs. This post is not going to be a hands-on tutorial post, but the intent is throw around some ideas about<br>structuring the root controller of your angular app.</p>
+    <updated>2015-09-04T22:33:04.305Z</updated>
+    <content type="html"><![CDATA[<p>ui-router is a great tool for those of us in the Angular realm. It gives a more logical way to represent the state of an application<br>than just plain old URLs. This post is not going to be a <a id="more"></a> hands-on tutorial post, but the intent is throw around some ideas about<br>structuring the root controller of your angular app.</p>
 <h3 id="Root_Controller_and_Saving_the_Root_URL">Root Controller and Saving the Root URL</h3><p>Root controller allows one to instantiate some global data and services, and maybe even setup a <code>$global</code> service to act as a shim.</p>
 <p>Root controller can often be seen in the base <code>index.html</code> of a project. In this case, it is used by calling the <code>ng-controller</code> directive on a <code>&lt;head&gt;</code> or <code>&lt;body&gt;</code> tag.<br>Alternatively, it could be mapped to a URL (the base URL for instance: “/“), and loaded via an <code>ng-view</code> in <code>index.html</code>; I am personally not a fan of using up the root URL for this purpose.</p>
 <p>With ui-router’s <code>abstract</code> state feature, one could save the URL as well as save hardcoding a controller definition in HTML. I think this is fruitful, as the <code>routes.js</code> (or whatever you call it)<br>ends up becoming a decisive place to check controller mappings. </p>
@@ -337,8 +335,8 @@ If you notice, I would now be forced to couple the <code>allListings</code> reso
     <link href="http://infinitecaus.es/2014/03/03/semver-2/"/>
     <id>http://infinitecaus.es/2014/03/03/semver-2/</id>
     <published>2014-03-04T01:42:00.000Z</published>
-    <updated>2015-09-02T20:31:05.795Z</updated>
-    <content type="html"><![CDATA[<p>Semantic versioning entails tagging your software at every stage of the development process. The term and scheme was proposed by <a href="http://en.wikipedia.org/wiki/Tom_Preston-Werner" target="_blank" rel="external">Tom<br>Preston-Werner</a> as a way to help developers manage what he called “dependency hell”. Also known as <code>semver</code>, it has now reached the version<br>2.0.0 and I certainly feel that having it standardized as such would provide direction for the development community at large.</p>
+    <updated>2015-09-04T22:34:39.937Z</updated>
+    <content type="html"><![CDATA[<p>Semantic versioning entails tagging your software at every stage of the development process. The term and scheme was proposed by <a id="more"></a> <a href="http://en.wikipedia.org/wiki/Tom_Preston-Werner" target="_blank" rel="external">Tom<br>Preston-Werner</a> as a way to help developers manage what he called “dependency hell”. Also known as <code>semver</code>, it has now reached the version<br>2.0.0 and I certainly feel that having it standardized as such would provide direction for the development community at large.</p>
 <h3 id="Why_am_I_writing_this_post">Why am I writing this post</h3><p>Well, perhaps because Erik Toth recently urged the community to take semver seriously on Nodeday.<br><a href="http://totherik.github.io/NodeDay2014/#0" target="_blank" rel="external">Here</a> are his full slides. In addition, I am resurrecting my blog today so<br>thought of it as a good topic to boot with.</p>
 <h3 id="Introduction">Introduction</h3><p>On a first look, it is really easy to absorb the tenets of <code>semver</code>. Basically, a version consists of 3 parts: <code>MAJOR</code>, <code>MINOR</code> and <code>PATCH</code>.<br>Semantic versioning dictates that all of these parts can incremented at specific points in the development lifecycle. The <a href="http://semver.org" target="_blank" rel="external">semver.org</a> site tells us to increment:</p>
 <ol>
