@@ -1,14 +1,34 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
     
 <head>
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Charandas Batra-Daitch">
-    <title>Charandas Batra-Daitch - Using a root controller with ui-router</title>
+    <title>Using a root controller with ui-router - Charandas Batra-Daitch</title>
     <meta name="author" content="Charandas Batra-Daitch">
-    <meta name="description" content="Charandas Batra-Daitch">
-    <link rel="icon" href="/assets/images/null">
+    
+    
+        <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <meta name="description" content="Instantiating a root controller without wasting a url, and also not coding it in your HTML.">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Using a root controller with ui-router">
+<meta property="og:url" content="http://infinitecaus.es/2014/05/11/ui-router-with-root-ctrl/index.html">
+<meta property="og:site_name" content="Charandas Batra-Daitch">
+<meta property="og:description" content="Instantiating a root controller without wasting a url, and also not coding it in your HTML.">
+<meta property="og:updated_time" content="2015-09-02T20:31:05.799Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Using a root controller with ui-router">
+<meta name="twitter:description" content="Instantiating a root controller without wasting a url, and also not coding it in your HTML.">
+    
+    
+    
+        <meta property="og:image" content="http://www.gravatar.com/avatar/511d6c5e91afae05e2f1468adca2fdd5?s=640"/>
+    
+    
+    
     
     <!--STYLES-->
     <link rel="stylesheet" href="/assets/css/style.min.css" type="text/css">
@@ -29,18 +49,18 @@
 
     <body>
         <div id="blog">
-            <header id="header">
-    <i id="btn-open-sidebar" class="fa fa-lg fa-bars "></i>
+            <header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <h1 class="header-title">
-        <a class="header-title-link" href="http://infinitecaus.es">Charandas Batra-Daitch</a>
+        <a class="header-title-link" href="/ ">Charandas Batra-Daitch</a>
     </h1>
     
-        <a class="header-picture-link" href="/#about">
+        <a class="header-right-picture" href="/#about">
             <img class="header-picture" src="http://www.gravatar.com/avatar/511d6c5e91afae05e2f1468adca2fdd5?s=90"/>
         </a>
     
 </header>
-            <nav id="sidebar">
+            <nav id="sidebar" data-behavior="4">
     
         <div class="sidebar-profile">
             <a href="/#about">
@@ -48,100 +68,157 @@
                     <img class="sidebar-profile-picture" src="http://www.gravatar.com/avatar/511d6c5e91afae05e2f1468adca2fdd5?s=90"/>
                 
             </a>
-            <span class="sidebar-profile-name hide-md">Charandas Batra-Daitch</span>
+            <span class="sidebar-profile-name">Charandas Batra-Daitch</span>
         </div>
     
     
         <ul class="sidebar-buttons">
-            
-                <li class="sidebar-button">
-                    
-                        <a  class="sidebar-button-link" href="http://infinitecaus.es/">
-                    
-                        <i class="sidebar-button-icon fa fa-lg fa-home"></i>
-                        <span class="sidebar-button-desc hide-md">Home</span>
-                    </a>
-                </li>
-            
-                <li class="sidebar-button">
-                    
-                        <a  class="sidebar-button-link" href="http://infinitecaus.es/all-tags">
-                    
-                        <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
-                        <span class="sidebar-button-desc hide-md">Tags</span>
-                    </a>
-                </li>
-            
-                <li class="sidebar-button">
-                    
-                        <a  class="sidebar-button-link" href="http://infinitecaus.es/#about">
-                    
-                        <i class="sidebar-button-icon fa fa-lg fa-question"></i>
-                        <span class="sidebar-button-desc hide-md">About me</span>
-                    </a>
-                </li>
-            
-        </ul>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/ "
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                    <span class="sidebar-button-desc">Home</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-tags"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                    <span class="sidebar-button-desc">Tags</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link st-search-show-outputs"
+                         href="/#search"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-search"></i>
+                    <span class="sidebar-button-desc">Search</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/#about"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                    <span class="sidebar-button-desc">About</span>
+                </a>
+        </li>
+        
+    </ul>
     
         <ul class="sidebar-buttons">
-            
-                <li class="sidebar-button">
-                    
-                        <a  class="sidebar-button-link" href="https://github.com/charandas" target="_blank">
-                    
-                        <i class="sidebar-button-icon fa fa-lg fa-github"></i>
-                        <span class="sidebar-button-desc hide-md">GitHub</span>
-                    </a>
-                </li>
-            
-                <li class="sidebar-button">
-                    
-                        <a  class="sidebar-button-link" href="http://careers.stackoverflow.com/charandas" target="_blank">
-                    
-                        <i class="sidebar-button-icon fa fa-lg fa-stack-overflow"></i>
-                        <span class="sidebar-button-desc hide-md">Stack Overflow</span>
-                    </a>
-                </li>
-            
-                <li class="sidebar-button">
-                    
-                        <a  class="sidebar-button-link" href="https://twitter.com/charandas108" target="_blank">
-                    
-                        <i class="sidebar-button-icon fa fa-lg fa-twitter"></i>
-                        <span class="sidebar-button-desc hide-md">Twitter</span>
-                    </a>
-                </li>
-            
-                <li class="sidebar-button">
-                    
-                        <a  class="sidebar-button-link" href="https://www.linkedin.com/in/charandas" target="_blank">
-                    
-                        <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
-                        <span class="sidebar-button-desc hide-md">Linked In</span>
-                    </a>
-                </li>
-            
-        </ul>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://github.com/charandas" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+                    <span class="sidebar-button-desc">GitHub</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="http://careers.stackoverflow.com/charandas" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-stack-overflow"></i>
+                    <span class="sidebar-button-desc">Stack Overflow</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://twitter.com/charandas108" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-twitter"></i>
+                    <span class="sidebar-button-desc">Twitter</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="https://www.linkedin.com/in/charandas" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
+                    <span class="sidebar-button-desc">Linked In</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="mailto:charandas108@gmail.com" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-envelope-o"></i>
+                    <span class="sidebar-button-desc">Mail</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/atom.xml"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+                    <span class="sidebar-button-desc">RSS</span>
+                </a>
+        </li>
+        
+    </ul>
     
 </nav>
-            <div id="main">
+
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
                 
 <article class="post" itemscope itemType="http://schema.org/BlogPosting">
     
-        <div class="post-header main-content-wrap">
     
-        <h1 class="post-title" itemprop="headline">Using a root controller with ui-router</h1>
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            Using a root controller with ui-router
+        </h1>
     
     <div class="post-meta">
-    <time  itemprop="datePublished" content="Sun May 11 2014 13:06:00 GMT-0400">
-        May 11, 2014
+    <time itemprop="datePublished" content="Sun May 11 2014 13:06:00 GMT-0400">
+	
+		    May 11, 2014
+    	
     </time>
     
 </div>
 </div>
     
-    <div class="post-content markdown main-content-wrap" itemprop="articleBody">
-        <p>ui-router is a great tool for those of us in the Angular realm. It gives a more logical way to represent the state of an application<br>than just plain ol’ URLs. This post is not going to be a hands-on tutorial post, but the intent is throw around some ideas about<br>structuring the root controller of your angular app.</p>
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p>ui-router is a great tool for those of us in the Angular realm. It gives a more logical way to represent the state of an application<br>than just plain ol’ URLs. This post is not going to be a hands-on tutorial post, but the intent is throw around some ideas about<br>structuring the root controller of your angular app.</p>
 <h3 id="Root_Controller_and_Saving_the_Root_URL">Root Controller and Saving the Root URL</h3><p>Root controller allows one to instantiate some global data and services, and maybe even setup a <code>$global</code> service to act as a shim.</p>
 <p>Root controller can often be seen in the base <code>index.html</code> of a project. In this case, it is used by calling the <code>ng-controller</code> directive on a <code>&lt;head&gt;</code> or <code>&lt;body&gt;</code> tag.<br>Alternatively, it could be mapped to a URL (the base URL for instance: “/“), and loaded via an <code>ng-view</code> in <code>index.html</code>; I am personally not a fan of using up the root URL for this purpose.</p>
 <p>With ui-router’s <code>abstract</code> state feature, one could save the URL as well as save hardcoding a controller definition in HTML. I think this is fruitful, as the <code>routes.js</code> (or whatever you call it)<br>ends up becoming a decisive place to check controller mappings. </p>
@@ -157,9 +234,11 @@
 <p>– <cite>Every seasoned ui-router user</cite></p>
 </blockquote>
 
-        
             
-        
+                
+
+            
+        </div>
     </div>
     <div class="post-footer main-content-wrap">
         
@@ -192,24 +271,38 @@
         </ul>
     </nav>
     <ul class="post-actions post-action-share">
-        <li class="post-action">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
             <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://infinitecaus.es/2014/05/11/ui-router-with-root-ctrl/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
-        <li class="post-action">
+        <li class="post-action hide-xs">
             <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://infinitecaus.es/2014/05/11/ui-router-with-root-ctrl/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
-        <li class="post-action">
+        <li class="post-action hide-xs">
             <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://infinitecaus.es/2014/05/11/ui-router-with-root-ctrl/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" href="#disqus_thread">
-                <i class="fa fa-comment-o"></i>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
             </a>
         </li>
     </ul>
@@ -222,8 +315,20 @@
 </div>
         
     </div>
-    <div class="post-bottom-bar">
-        <div class="post-actions-wrap">
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2015 Charandas Batra-Daitch. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
             <li class="post-action">
@@ -245,42 +350,66 @@
         </ul>
     </nav>
     <ul class="post-actions post-action-share">
-        <li class="post-action">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
             <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://infinitecaus.es/2014/05/11/ui-router-with-root-ctrl/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
-        <li class="post-action">
+        <li class="post-action hide-xs">
             <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://infinitecaus.es/2014/05/11/ui-router-with-root-ctrl/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
-        <li class="post-action">
+        <li class="post-action hide-xs">
             <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://infinitecaus.es/2014/05/11/ui-router-with-root-ctrl/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" href="#disqus_thread">
-                <i class="fa fa-comment-o"></i>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
             </a>
         </li>
     </ul>
 </div>
 
 
-    </div>
-</article>
-
-
-
-                <footer id="footer" class="main-content-wrap">
-    <span class="copyrights">
-        Copyrights &copy; 2015 Charandas Batra-Daitch. Creative Commons Attribution-ShareAlike.
-    </span>
-</footer>
-
-            </div>
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://infinitecaus.es/2014/05/11/ui-router-with-root-ctrl/">
+                <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://infinitecaus.es/2014/05/11/ui-router-with-root-ctrl/">
+                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://infinitecaus.es/2014/05/11/ui-router-with-root-ctrl/">
+                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+            
         </div>
         <div id="about">
     <div id="about-card">
@@ -292,13 +421,22 @@
         
             <h4 id="about-card-name">Charandas Batra-Daitch</h4>
         
-            <h5 id="about-card-bio">I am Charandas, a developer, generalist and hacker originally from India, now based in the US. I am passionate about building mobile and web apps that challenge the problems of data and scale. I blog about technology here and my projects on github might be of your interest.</h5>
+            <h5 id="about-card-bio"><p>I am Charandas, a developer, generalist and hacker originally from India, now based in the US. I am passionate about building mobile and web apps that challenge the problems of data and scale. I blog about technology here and my projects on github might be of your interest.</p>
+</h5>
         
+        
+            <h5 id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>Digital Nomad</p>
+
+            </h5>
         
         
     </div>
 </div>
-        <div id="cover" style="background-image:url('/assets/images/cover.png');"></div>
+
+        <div id="cover" style="background-image:url('http://res.cloudinary.com/tranquilpeak-hexo-theme/image/upload/v1438975482/v1.3.0-cover.jpg');"></div>
     </body>
     <!--SCRIPTS-->
 <script src="/assets/js/script.min.js" type="text/javascript"></script>
@@ -313,6 +451,16 @@
             dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
         })();
+    </script>
+
+
+    <script type="text/javascript">
+        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+                (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+            e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+        _st('install','zZAHaE2_1CTkyRMLRsi3','2.0.0');
     </script>
 
 
