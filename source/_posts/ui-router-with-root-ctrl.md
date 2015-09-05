@@ -8,9 +8,7 @@ subject: HTML5 Client Apps
 layout: post
 ---
 
-ui-router is a great tool for those of us in the Angular realm. It gives a more logical way to represent the state of an application
-than just plain old URLs. This post is not going to be a <!-- more --> hands-on tutorial post, but the intent is throw around some ideas about
-structuring the root controller of your angular app.
+ui-router is a great tool for those of us in the Angular realm. It gives a more logical way to represent the state of an application than just plain old URLs. This post is not going to be a <!-- more --> hands-on tutorial post, but the intent is throw around some ideas about structuring the root controller of your angular app.
 
 ### Root Controller and Saving the Root URL ###
 Root controller allows one to instantiate some global data and services, and maybe even setup a `$global` service to act as a shim.

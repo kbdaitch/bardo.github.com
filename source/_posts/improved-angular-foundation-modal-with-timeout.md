@@ -9,8 +9,7 @@ layout: post
 ---
 
 
-In my earlier {% post_link angular-foundation-modal-with-timeout post%}, I presented the problem of not being able to intercept
-the closing/dismissing of a modal from the UI. While searching for an answer <!-- more --> to that problem I ended up improving and simplifying the ModalService wrapper.
+In my earlier {% post_link angular-foundation-modal-with-timeout post%}, I presented the problem of not being able to intercept the closing/dismissing of a modal from the UI. While searching for an answer <!-- more --> to that problem I ended up improving and simplifying the ModalService wrapper.
 
 ### Salient Features of this Update ###
 

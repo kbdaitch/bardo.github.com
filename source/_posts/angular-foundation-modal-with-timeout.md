@@ -8,10 +8,9 @@ subject: Angular Services
 layout: post
 ---
 
-[Angular-foundation](http://madmimi.github.io/angular-foundation/) from Madmimi comes with a modal service that can be pretty useful when pushing modals onto the views of your
-angular app. The API is pretty flexible as provided [here](http://madmimi.github.io/angular-foundation/#/modal).
+[Angular-foundation](http://madmimi.github.io/angular-foundation/) from Madmimi comes with a modal service that can be pretty useful when pushing modals onto the views of your angular app. The API is pretty flexible as provided [here](http://madmimi.github.io/angular-foundation/#/modal). <!-- more -->
 
-As mentioned in <!-- more --> the example in the JavaScript, you can accomplish a range of modals pretty easily. However, for simpler modals, this can get really tedious if all your ModalInstanceCtrl is going to do is bringing the modal up and dismissing/closing it. Instead, here is my take on the modal instance controller.
+As mentioned in the example in the JavaScript, you can accomplish a range of modals pretty easily. However, for simpler modals, this can get really tedious if all your ModalInstanceCtrl is going to do is bringing the modal up and dismissing/closing it. Instead, here is my take on the modal instance controller.
 {% gist charandas/140341acbc49a8a3f97b %}
 
 Also, a wrapper around `$modal`, namely `ModalService` could be written to automatically plug this controller in with some template defaults. Like so,

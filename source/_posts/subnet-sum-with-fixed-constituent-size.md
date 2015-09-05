@@ -8,9 +8,7 @@ subject: Algorithms
 layout: post
 ---
 
-On recently applying for a UX position at [Elastic](https://www.elastic.co/)
-for their product [Kibana](https://www.elastic.co/products/kibana), I was given this complex yet
-intriguing challenge: <!-- more -->
+On recently applying for a UX position at [Elastic](https://www.elastic.co/) for their product [Kibana](https://www.elastic.co/products/kibana), I was given this complex yet intriguing challenge: <!-- more -->
 
 > In javascript: Write a function that, given an array of 
 > integers (x), and an integer (y), returns true if any two of 
