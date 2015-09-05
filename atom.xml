@@ -47,8 +47,8 @@
     <link href="http://infinitecaus.es/2015/06/24/subnet-sum-with-fixed-constituent-size/"/>
     <id>http://infinitecaus.es/2015/06/24/subnet-sum-with-fixed-constituent-size/</id>
     <published>2015-06-24T19:40:00.000Z</published>
-    <updated>2015-09-04T22:34:04.494Z</updated>
-    <content type="html"><![CDATA[<p>On recently applying for a UX position at <a href="https://www.elastic.co/" target="_blank" rel="external">Elastic</a><br>for their product <a href="https://www.elastic.co/products/kibana" target="_blank" rel="external">Kibana</a>, I was given this complex yet<br>intriguing challenge: <a id="more"></a></p>
+    <updated>2015-09-05T01:39:24.040Z</updated>
+    <content type="html"><![CDATA[<p>On recently applying for a UX position at <a href="https://www.elastic.co/" target="_blank" rel="external">Elastic</a> for their product <a href="https://www.elastic.co/products/kibana" target="_blank" rel="external">Kibana</a>, I was given this complex yet intriguing challenge: <a id="more"></a></p>
 <blockquote>
 <p>In javascript: Write a function that, given an array of<br>integers (x), and an integer (y), returns true if any two of<br>the integers in x add up to y. (Optional) Now, write a<br>function that, given the above arguments and an additional<br>integer (z), returns true if any z of the integers in x add<br>up to y.</p>
 </blockquote>
@@ -144,8 +144,8 @@ If you notice, I would now be forced to couple the <code>allListings</code> reso
     <link href="http://infinitecaus.es/2014/07/04/improved-angular-foundation-modal-with-timeout/"/>
     <id>http://infinitecaus.es/2014/07/04/improved-angular-foundation-modal-with-timeout/</id>
     <published>2014-07-04T07:15:00.000Z</published>
-    <updated>2015-09-04T22:32:33.578Z</updated>
-    <content type="html"><![CDATA[<p>In my earlier <a href="/2014/06/07/angular-foundation-modal-with-timeout/" title="post">post</a>, I presented the problem of not being able to intercept<br>the closing/dismissing of a modal from the UI. While searching for an answer <a id="more"></a> to that problem I ended up improving and simplifying the ModalService wrapper.</p>
+    <updated>2015-09-05T01:39:43.265Z</updated>
+    <content type="html"><![CDATA[<p>In my earlier <a href="/2014/06/07/angular-foundation-modal-with-timeout/" title="post">post</a>, I presented the problem of not being able to intercept the closing/dismissing of a modal from the UI. While searching for an answer <a id="more"></a> to that problem I ended up improving and simplifying the ModalService wrapper.</p>
 <h3 id="Salient_Features_of_this_Update">Salient Features of this Update</h3><ol>
 <li><code>closed</code> boolean: the wrapper around <code>$modal</code>, namely <code>ModalService</code>, now relies on a boolean for gating the inner instances close and dismiss methods. This goes a long way in simplifying our timeout code. We no longer cancel the timeout in the event of a manual close or instead. The noop like behavior of close and dismiss wrappers doesn’t<br>hurt at all.</li>
 <li><code>unregister</code> and pooling: <code>unregister</code> is a private method that keeps the modal <code>pool</code> (a newly introduced private data structure for book-keeping) maintained in event of user-enforced close<br>or dismiss. You will notice that the <code>ModalInstanceCtrl</code> has the extra <code>unregister</code> calls. This is the answer to my question of intercepting dismissing/closing from the UI. Once a modal is unregistered the boolean that we introduced protects from using the inner instance again.</li>
@@ -260,9 +260,9 @@ If you notice, I would now be forced to couple the <code>allListings</code> reso
     <link href="http://infinitecaus.es/2014/06/07/angular-foundation-modal-with-timeout/"/>
     <id>http://infinitecaus.es/2014/06/07/angular-foundation-modal-with-timeout/</id>
     <published>2014-06-07T16:52:00.000Z</published>
-    <updated>2015-09-04T22:36:17.813Z</updated>
-    <content type="html"><![CDATA[<p><a href="http://madmimi.github.io/angular-foundation/" target="_blank" rel="external">Angular-foundation</a> from Madmimi comes with a modal service that can be pretty useful when pushing modals onto the views of your<br>angular app. The API is pretty flexible as provided <a href="http://madmimi.github.io/angular-foundation/#/modal" target="_blank" rel="external">here</a>.</p>
-<p>As mentioned in <a id="more"></a> the example in the JavaScript, you can accomplish a range of modals pretty easily. However, for simpler modals, this can get really tedious if all your ModalInstanceCtrl is going to do is bringing the modal up and dismissing/closing it. Instead, here is my take on the modal instance controller.<br><script src="//gist.github.com/charandas/140341acbc49a8a3f97b.js"></script></p>
+    <updated>2015-09-05T01:40:18.609Z</updated>
+    <content type="html"><![CDATA[<p><a href="http://madmimi.github.io/angular-foundation/" target="_blank" rel="external">Angular-foundation</a> from Madmimi comes with a modal service that can be pretty useful when pushing modals onto the views of your angular app. The API is pretty flexible as provided <a href="http://madmimi.github.io/angular-foundation/#/modal" target="_blank" rel="external">here</a>. <a id="more"></a></p>
+<p>As mentioned in the example in the JavaScript, you can accomplish a range of modals pretty easily. However, for simpler modals, this can get really tedious if all your ModalInstanceCtrl is going to do is bringing the modal up and dismissing/closing it. Instead, here is my take on the modal instance controller.<br><script src="//gist.github.com/charandas/140341acbc49a8a3f97b.js"></script></p>
 <p>Also, a wrapper around <code>$modal</code>, namely <code>ModalService</code> could be written to automatically plug this controller in with some template defaults. Like so,<br><script src="//gist.github.com/charandas/ed6bf36215888c4a8cba.js"></script></p>
 <h3 id="What_did_we_accomplish">What did we accomplish</h3><ol>
 <li><code>timeout</code>: As you can see the service written by us has a parameter called <code>timeout</code>. This ensures that we have ability to push self-poppable modals onto the view.<br>L65 ensures that the modal made has a scheduled timeout that can dismiss it. Not only that, by using the close function of our wrapper, we can cancel any scheduled timeouts in case of a user action such as “our app becoming active”.</li>
@@ -298,8 +298,8 @@ If you notice, I would now be forced to couple the <code>allListings</code> reso
     <link href="http://infinitecaus.es/2014/05/11/ui-router-with-root-ctrl/"/>
     <id>http://infinitecaus.es/2014/05/11/ui-router-with-root-ctrl/</id>
     <published>2014-05-11T17:06:00.000Z</published>
-    <updated>2015-09-04T22:33:04.305Z</updated>
-    <content type="html"><![CDATA[<p>ui-router is a great tool for those of us in the Angular realm. It gives a more logical way to represent the state of an application<br>than just plain old URLs. This post is not going to be a <a id="more"></a> hands-on tutorial post, but the intent is throw around some ideas about<br>structuring the root controller of your angular app.</p>
+    <updated>2015-09-05T01:40:50.322Z</updated>
+    <content type="html"><![CDATA[<p>ui-router is a great tool for those of us in the Angular realm. It gives a more logical way to represent the state of an application than just plain old URLs. This post is not going to be a <a id="more"></a> hands-on tutorial post, but the intent is throw around some ideas about structuring the root controller of your angular app.</p>
 <h3 id="Root_Controller_and_Saving_the_Root_URL">Root Controller and Saving the Root URL</h3><p>Root controller allows one to instantiate some global data and services, and maybe even setup a <code>$global</code> service to act as a shim.</p>
 <p>Root controller can often be seen in the base <code>index.html</code> of a project. In this case, it is used by calling the <code>ng-controller</code> directive on a <code>&lt;head&gt;</code> or <code>&lt;body&gt;</code> tag.<br>Alternatively, it could be mapped to a URL (the base URL for instance: “/“), and loaded via an <code>ng-view</code> in <code>index.html</code>; I am personally not a fan of using up the root URL for this purpose.</p>
 <p>With ui-router’s <code>abstract</code> state feature, one could save the URL as well as save hardcoding a controller definition in HTML. I think this is fruitful, as the <code>routes.js</code> (or whatever you call it)<br>ends up becoming a decisive place to check controller mappings. </p>
