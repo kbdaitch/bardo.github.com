@@ -45,7 +45,7 @@ layout: post
 {% image fancybox left http://res.cloudinary.com/city-corridor/image/upload/v1441412413/2015-09-04-NYC-Popular_gy3liq.png http://res.cloudinary.com/city-corridor/image/upload/c_scale,w_150/v1441412413/2015-09-04-NYC-Popular_gy3liq.png 150px 267px %}
 {% image fancybox left clear http://res.cloudinary.com/city-corridor/image/upload/v1441412401/2015-09-04-NYC-StartPurchase_jpi5j7.png http://res.cloudinary.com/city-corridor/image/upload/c_scale,w_150/v1441412401/2015-09-04-NYC-StartPurchase_jpi5j7.png 150px 267px %}
 
-## Metlife Life Insurance
+## Metlife
 {% image fancybox left http://res.cloudinary.com/city-corridor/image/upload/v1441416240/Metlife-cover_amsdyc.png http://res.cloudinary.com/city-corridor/image/upload/c_scale,w_300/v1441416240/Metlife-cover_amsdyc.png 300px 533px %}
 {% image fancybox left http://res.cloudinary.com/city-corridor/image/upload/v1441416247/Metlife-coupon-process_obggom.png http://res.cloudinary.com/city-corridor/image/upload/c_scale,w_150/v1441416247/Metlife-coupon-process_obggom.png 150px 267px %}
 {% image fancybox left http://res.cloudinary.com/city-corridor/image/upload/v1441416244/Metlife-offer-sent_wgrmz6.png http://res.cloudinary.com/city-corridor/image/upload/c_scale,w_150/v1441416244/Metlife-offer-sent_wgrmz6.png 150px 267px %}
