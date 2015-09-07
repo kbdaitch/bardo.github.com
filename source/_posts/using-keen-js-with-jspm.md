@@ -2,7 +2,6 @@
 title: Using keen-js with jspm - use superagent 1.3
 date: 2015-09-02 16:32
 description: jspm resolve comes to rescue
-tags: [jspm, keen-js, superagent]
 cta: Read about the quick fix
 subject: module loaders
 layout: post

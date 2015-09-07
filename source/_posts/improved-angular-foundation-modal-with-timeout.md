@@ -2,7 +2,6 @@
 title: Improved boilerplate when using Madmimi's angular-foundation $modal
 date: 2014-07-04 03:15
 description: Wrap angular-foundation $modal so as to add goodies
-tags: [angular-foundation, angular, modal, foundation, timeout, boilerplate]
 cta: Read about extending $modal from angular-foundation
 subject: Angular Services
 layout: post

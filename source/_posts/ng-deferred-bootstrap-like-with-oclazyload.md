@@ -2,7 +2,6 @@
 title: Use $ocLazyLoad to achieve your own angular-deferred-bootstrap
 date: 2014-10-13 20:48
 description: futureStates.addResolve with $ocLazyLoad for eager loading
-tags: [requirejs, ocLazyload, ui-router-extras, non-future states, angular-deferred-bootstrap, ng-deferred-bootstrap, RAII]
 cta: Read about how to acheive your own angular-deferred-bootstrap in less than 100 lines of code
 subject: JavaScript
 layout: post

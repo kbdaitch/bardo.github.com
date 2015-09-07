@@ -2,7 +2,6 @@
 title: Using a root controller with ui-router
 date: 2014-05-11 13:06
 description: Instantiating a root controller without wasting a url, and also not coding it in your HTML.
-tags: [ng-controller, angular, ui-router, root controller]
 cta: Read about using one with ui-router
 subject: HTML5 Client Apps
 layout: post
@@ -17,7 +16,7 @@ Root controller can often be seen in the base `index.html` of a project. In this
 Alternatively, it could be mapped to a URL (the base URL for instance: "/"), and loaded via an `ng-view` in `index.html`; I am personally not a fan of using up the root URL for this purpose.
 
 With ui-router's `abstract` state feature, one could save the URL as well as save hardcoding a controller definition in HTML. I think this is fruitful, as the `routes.js` (or whatever you call it)
-ends up becoming a decisive place to check controller mappings. 
+ends up becoming a decisive place to check controller mappings.
 
 > Basically, the `abstract` state buys us the ability for that url or state to be unreachable.
 > This means that one can only
@@ -31,7 +30,7 @@ The only thing to keep in mind is to use a `template`/`templateUrl` for abstract
 My `routes.js` looks similar to:
 {% gist charandas/660802f445a9edb06fe3 %}
 
-Then, one could also follow the same pattern for the root controller of the print module of the app; have the abstract state and instantiate the root print controller on that. 
+Then, one could also follow the same pattern for the root controller of the print module of the app; have the abstract state and instantiate the root print controller on that.
 
 > Also, as noted in the comments, there is nothing stopping us from loading a subset of states in a base template, say
 > `index.html`, and the leftovers in another called `print.html`. In fact, the only thing

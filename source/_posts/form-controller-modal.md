@@ -2,7 +2,6 @@
 title: Patch angular-foundation to expose a form controller
 date: 2014-06-21 18:51
 description: Add the ability to $setValidity and more on a form inside a modal
-tags: [angular, angular-foundation, forms]
 cta: Read about how to expose the form controller from within transcluded modal DOM
 subject: JavaScript
 layout: post

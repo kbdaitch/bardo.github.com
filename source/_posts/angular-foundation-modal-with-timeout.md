@@ -2,7 +2,6 @@
 title: Reducing boilerplate when using Madmimi's angular-foundation $modal
 date: 2014-06-07 12:52
 description: Wrap angular-foundation $modal to reduce boilerplate.
-tags: [angular-foundation, angular, modal, foundation, timeout, boilerplate]
 cta: Read about extending $modal from angular-foundation
 subject: Angular Services
 layout: post
@@ -28,7 +27,7 @@ L65 ensures that the modal made has a scheduled timeout that can dismiss it. Not
 {%gist charandas/689e2c30ddddec25103d %}
 
 ### With extra parmas ###
-Some pseudo code: 
+Some pseudo code:
 {%gist charandas/6825b1f2d81dadd9fc89 %}
 
 

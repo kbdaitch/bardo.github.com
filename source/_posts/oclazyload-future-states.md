@@ -2,7 +2,6 @@
 title: Lazy Loading ui-router states with ocLazyLoad and ui-router-extras futureStates
 date: 2014-08-26 07:48
 description: Fasten your app by reducing JS payload
-tags: [requirejs, ocLazyload, ui-router-extras, future states]
 cta: Read about how to lazy load ui-router states.
 subject: JavaScript
 layout: post

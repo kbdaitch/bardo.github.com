@@ -2,7 +2,6 @@
 title: Semantic Versioning
 date: 2014-03-03 20:42
 description: Why semver is important.
-tags: [semver, npmjs, bower, pip, rubygems, dependencies]
 cta: Read about semver.
 subject: Software Versioning
 layout: post

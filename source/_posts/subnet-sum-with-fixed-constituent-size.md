@@ -2,7 +2,6 @@
 title: Subnet Sum with Fixed Constituent Size
 date: 2015-06-24 15:40
 description: One way to tackle this NP-complete problem.
-tags: [algorithms, JavaScript, Subnet Sum]
 cta: Read about an NP-Complete problem.
 subject: Algorithms
 layout: post
@@ -10,11 +9,11 @@ layout: post
 
 On recently applying for a UX position at [Elastic](https://www.elastic.co/) for their product [Kibana](https://www.elastic.co/products/kibana), I was given this complex yet intriguing challenge: <!-- more -->
 
-> In javascript: Write a function that, given an array of 
-> integers (x), and an integer (y), returns true if any two of 
-> the integers in x add up to y. (Optional) Now, write a 
-> function that, given the above arguments and an additional 
-> integer (z), returns true if any z of the integers in x add 
+> In javascript: Write a function that, given an array of
+> integers (x), and an integer (y), returns true if any two of
+> the integers in x add up to y. (Optional) Now, write a
+> function that, given the above arguments and an additional
+> integer (z), returns true if any z of the integers in x add
 > up to y.
 
 
