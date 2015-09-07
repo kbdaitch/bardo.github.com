@@ -18,7 +18,7 @@
 <meta property="og:url" content="http://infinitecaus.es/2014/05/11/ui-router-with-root-ctrl/index.html">
 <meta property="og:site_name" content="Charandas Batra-Daitch">
 <meta property="og:description" content="Instantiating a root controller without wasting a url, and also not coding it in your HTML.">
-<meta property="og:updated_time" content="2015-09-05T01:40:50.322Z">
+<meta property="og:updated_time" content="2015-09-07T21:27:23.780Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Using a root controller with ui-router">
 <meta name="twitter:description" content="Instantiating a root controller without wasting a url, and also not coding it in your HTML.">
@@ -95,18 +95,6 @@
                 
                     <i class="sidebar-button-icon fa fa-lg fa-paint-brush"></i>
                     <span class="sidebar-button-desc">Portfolio</span>
-                </a>
-        </li>
-        
-            <li class="sidebar-button">
-                
-                    <a  class="sidebar-button-link "
-                         href="/all-tags"
-                        
-                    >
-                
-                    <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
-                    <span class="sidebar-button-desc">Tags</span>
                 </a>
         </li>
         
@@ -245,14 +233,14 @@
             <p>ui-router is a great tool for those of us in the Angular realm. It gives a more logical way to represent the state of an application than just plain old URLs. This post is not going to be a <a id="more"></a> hands-on tutorial post, but the intent is throw around some ideas about structuring the root controller of your angular app.</p>
 <h3 id="Root_Controller_and_Saving_the_Root_URL">Root Controller and Saving the Root URL</h3><p>Root controller allows one to instantiate some global data and services, and maybe even setup a <code>$global</code> service to act as a shim.</p>
 <p>Root controller can often be seen in the base <code>index.html</code> of a project. In this case, it is used by calling the <code>ng-controller</code> directive on a <code>&lt;head&gt;</code> or <code>&lt;body&gt;</code> tag.<br>Alternatively, it could be mapped to a URL (the base URL for instance: “/“), and loaded via an <code>ng-view</code> in <code>index.html</code>; I am personally not a fan of using up the root URL for this purpose.</p>
-<p>With ui-router’s <code>abstract</code> state feature, one could save the URL as well as save hardcoding a controller definition in HTML. I think this is fruitful, as the <code>routes.js</code> (or whatever you call it)<br>ends up becoming a decisive place to check controller mappings. </p>
+<p>With ui-router’s <code>abstract</code> state feature, one could save the URL as well as save hardcoding a controller definition in HTML. I think this is fruitful, as the <code>routes.js</code> (or whatever you call it)<br>ends up becoming a decisive place to check controller mappings.</p>
 <blockquote>
 <p>Basically, the <code>abstract</code> state buys us the ability for that url or state to be unreachable.<br>This means that one can only<br>instantiate that state while visiting one of its children states - Magikal!</p>
 <p>– <cite>Every seasoned ui-router user</cite></p>
 </blockquote>
 <p>The only thing to keep in mind is to use a <code>template</code>/<code>templateUrl</code> for abstract states that contains a <code>&lt;ui-view /&gt;</code>. This way, you ensure there is an unbroken line of nested <code>&lt;ui-view&gt;</code> hierarchy.</p>
 <p>My <code>routes.js</code> looks similar to:<br><script src="//gist.github.com/charandas/660802f445a9edb06fe3.js"></script></p>
-<p>Then, one could also follow the same pattern for the root controller of the print module of the app; have the abstract state and instantiate the root print controller on that. </p>
+<p>Then, one could also follow the same pattern for the root controller of the print module of the app; have the abstract state and instantiate the root print controller on that.</p>
 <blockquote>
 <p>Also, as noted in the comments, there is nothing stopping us from loading a subset of states in a base template, say<br><code>index.html</code>, and the leftovers in another called <code>print.html</code>. In fact, the only thing<br>ui-router is concerned with is that each of these templates have a <code>&lt;ui-view /&gt;</code>. This way, you get different base<br>layouts and styling for different modules of your application.</p>
 <p>– <cite>Every seasoned ui-router user</cite></p>
@@ -265,13 +253,6 @@
         </div>
     </div>
     <div class="post-footer main-content-wrap">
-        
-            <div class="post-footer-tags">
-                <span class="text-color-light text-small">TAGGED IN</span><br/>
-                
-    <a class="tag tag--primary tag--small t-link" href="/tags/angular/">angular</a> <a class="tag tag--primary tag--small t-link" href="/tags/ng-controller/">ng-controller</a> <a class="tag tag--primary tag--small t-link" href="/tags/root-controller/">root controller</a> <a class="tag tag--primary tag--small t-link" href="/tags/ui-router/">ui-router</a>
-
-            </div>
         
         <div class="post-actions-wrap">
     <nav>
