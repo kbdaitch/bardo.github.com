@@ -158,7 +158,7 @@ google_analytics_id: UA-65637005-1
 # Your Gravatar email. Overwrite `author.picture` everywhere in the blog
 gravatar_email: charandas108@gmail.com
 # Your swiftype install key
-swiftype_install_key: zZAHaE2_1CTkyRMLRsi3
+swiftype_install_key: XhCY2sTfBsiptpAqE5PP
 # Your Facebook user ids used to connect your blog with your facebook user accounts (Facebook Insights). Separate ids with comma. e.g : 9830047,1003342
 fb_admin_ids:
 # Your Facebook app id used to connect your blog with your facebook app account (Facebook Insights). E.g : 9841307
