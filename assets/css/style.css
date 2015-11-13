@@ -2344,7 +2344,7 @@ blockquote {
     position: relative;
     top: -1000px;
     display: block;
-    background: white;
+    background: rgba(188, 141, 0, 0.8);
     max-width: 400px;
     padding: 0;
     margin: 0 auto;
@@ -2365,7 +2365,8 @@ blockquote {
       margin-bottom: 15px; }
     #about #about-card #about-card-name {
       margin-top: 0;
-      margin-bottom: 20px; }
+      margin-bottom: 20px;
+      color: navajowhite; }
     #about #about-card #about-card-bio {
       padding: 0 30px;
       margin: 0 0 30px 0; }
@@ -2379,7 +2380,7 @@ blockquote {
       font-size: 1.5rem;
       line-height: 1.85em;
       font-weight: 400;
-      color: #5d686f; }
+      color: #15376a; }
 
 @media only screen and (max-width: 767px) {
   #about #about-card {

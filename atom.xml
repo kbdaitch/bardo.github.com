@@ -41,12 +41,13 @@
     <link href="http://infinitecaus.es/2015/06/24/subnet-sum-with-fixed-constituent-size/"/>
     <id>http://infinitecaus.es/2015/06/24/subnet-sum-with-fixed-constituent-size/</id>
     <published>2015-06-24T19:40:00.000Z</published>
-    <updated>2015-09-07T21:27:02.276Z</updated>
+    <updated>2015-11-13T22:43:16.276Z</updated>
     <content type="html"><![CDATA[<p>On recently applying for a UX position at <a href="https://www.elastic.co/" target="_blank" rel="external">Elastic</a> for their product <a href="https://www.elastic.co/products/kibana" target="_blank" rel="external">Kibana</a>, I was given this complex yet intriguing challenge: <a id="more"></a></p>
 <blockquote>
 <p>In javascript: Write a function that, given an array of<br>integers (x), and an integer (y), returns true if any two of<br>the integers in x add up to y. (Optional) Now, write a<br>function that, given the above arguments and an additional<br>integer (z), returns true if any z of the integers in x add<br>up to y.</p>
 </blockquote>
 <p>While not the most optimal solution, my solution based<br>off of this Quora <a href="http://www.quora.com/I-need-to-write-an-algorithm-How-should-I-approach-the-following-problem/answer/Ivan-Krpelnik" target="_blank" rel="external">answer</a> works:</p>
+<p><del>As such, an NP-Complete problem, it doesn’t have any upper bound on its compute complexity.</del> (This wasn’t true. As corrected by Jonas Jensen.)</p>
 <script src="//gist.github.com/charandas/5fb5189ce1239c807afd.js"></script>
 <p>Another possible solution could be to not brute force the iteration between the start and stop positions, and instead compute all the permutations of the bitmasks that have <code>z</code> <code>1&#39;s</code>. That one could take some more work, using this <a href="http://jsbin.com/eXefawe/2/edit?html,js,output" target="_blank" rel="external">jsbin</a>.</p>
 <p>I was trying to keep it simple. But if you come across other solutions, feel free to share.</p>
