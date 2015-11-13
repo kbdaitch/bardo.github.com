@@ -20,6 +20,8 @@ On recently applying for a UX position at [Elastic](https://www.elastic.co/) for
 While not the most optimal solution, my solution based
 off of this Quora [answer](http://www.quora.com/I-need-to-write-an-algorithm-How-should-I-approach-the-following-problem/answer/Ivan-Krpelnik) works:
 
+<del>As such, an NP-Complete problem, it doesn't have any upper bound on its compute complexity.</del> (This wasn't true. As corrected by Jonas Jensen.)
+
 {%gist charandas/5fb5189ce1239c807afd %}
 
 Another possible solution could be to not brute force the iteration between the start and stop positions, and instead compute all the permutations of the bitmasks that have `z` `1's`. That one could take some more work, using this [jsbin](http://jsbin.com/eXefawe/2/edit?html,js,output).
