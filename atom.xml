@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title><![CDATA[Charandas Batra-Daitch]]></title>
   <subtitle><![CDATA[Web Developer-Evangelist]]></subtitle>
-  <link href="/atom.xml" rel="self"/>
+  <link href="/charandas/atom.xml" rel="self"/>
   <link href="http://infinitecaus.es/"/>
   <updated>2015-09-07T21:27:31.540Z</updated>
   <id>http://infinitecaus.es/</id>
@@ -65,7 +65,7 @@
     <id>http://infinitecaus.es/2014/10/13/ng-deferred-bootstrap-like-with-oclazyload/</id>
     <published>2014-10-14T00:48:00.000Z</published>
     <updated>2015-09-07T21:26:47.524Z</updated>
-    <content type="html"><![CDATA[<p>A few days ago, it dawned on me that the full futureStates implemention as shown in my previous blog <a href="/2014/08/26/oclazyload-future-states/" title="post">post</a> was not needed by my app. I was okay with eagerly loading the JavaScript, however <a id="more"></a> I wanted to acheive two things, namely,</p>
+    <content type="html"><![CDATA[<p>A few days ago, it dawned on me that the full futureStates implemention as shown in my previous blog <a href="/charandas/2014/08/26/oclazyload-future-states/" title="post">post</a> was not needed by my app. I was okay with eagerly loading the JavaScript, however <a id="more"></a> I wanted to acheive two things, namely,</p>
 <ol>
 <li>Restrict what JavaScript I wanted to load in the entire lifecyle of an app. To me, it was pretty deterministic what I wanted to load or not depending on a remote JSON resource.</li>
 <li>I wanted some abilitites of the package <a href="https://github.com/philippd/angular-deferred-bootstrap" target="_blank" rel="external">angular-deferred-bootstrap</a> but in a way that I didn’t have replication of services and DI-injected resources that they fetched. I wanted these because <code>ui-router</code> would otherwise force me to<br>callout certain resolve-names needlessly. So for instance, if I have a <code>ListingService</code> that on app start, loads<br>a <code>listings.json</code> using a function <code>ListingService.getAll</code> and subsequently, I could make other calls to <code>LIstingService</code><br>such as <code>query</code> or <code>get</code>. So I did the <code>getAll</code> in the root state, and then proceeded to use the <code>ListingService</code> like so:<script src="//gist.github.com/charandas/c00c63a47a8f921773d0.js"></script>
@@ -112,7 +112,7 @@ If you notice, I would now be forced to couple the <code>allListings</code> reso
     <id>http://infinitecaus.es/2014/07/04/improved-angular-foundation-modal-with-timeout/</id>
     <published>2014-07-04T07:15:00.000Z</published>
     <updated>2015-09-07T21:26:43.348Z</updated>
-    <content type="html"><![CDATA[<p>In my earlier <a href="/2014/06/07/angular-foundation-modal-with-timeout/" title="post">post</a>, I presented the problem of not being able to intercept the closing/dismissing of a modal from the UI. While searching for an answer <a id="more"></a> to that problem I ended up improving and simplifying the ModalService wrapper.</p>
+    <content type="html"><![CDATA[<p>In my earlier <a href="/charandas/2014/06/07/angular-foundation-modal-with-timeout/" title="post">post</a>, I presented the problem of not being able to intercept the closing/dismissing of a modal from the UI. While searching for an answer <a id="more"></a> to that problem I ended up improving and simplifying the ModalService wrapper.</p>
 <h3 id="Salient_Features_of_this_Update">Salient Features of this Update</h3><ol>
 <li><code>closed</code> boolean: the wrapper around <code>$modal</code>, namely <code>ModalService</code>, now relies on a boolean for gating the inner instances close and dismiss methods. This goes a long way in simplifying our timeout code. We no longer cancel the timeout in the event of a manual close or instead. The noop like behavior of close and dismiss wrappers doesn’t<br>hurt at all.</li>
 <li><code>unregister</code> and pooling: <code>unregister</code> is a private method that keeps the modal <code>pool</code> (a newly introduced private data structure for book-keeping) maintained in event of user-enforced close<br>or dismiss. You will notice that the <code>ModalInstanceCtrl</code> has the extra <code>unregister</code> calls. This is the answer to my question of intercepting dismissing/closing from the UI. Once a modal is unregistered the boolean that we introduced protects from using the inner instance again.</li>
